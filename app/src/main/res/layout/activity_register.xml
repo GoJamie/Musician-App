@@ -175,12 +175,12 @@
 
         <Button
             android:id="@+id/button3"
-            android:layout_marginTop="35dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
             android:background="#27b061"
-            android:textColor="#FFFCFAFA"
-            android:text="Register" />
+            android:text="Register"
+            android:textColor="#FFFCFAFA" />
     </LinearLayout>
 
 

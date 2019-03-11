@@ -2,6 +2,7 @@ package com.musicians;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import com.example.musicians.R;
 
 public class MainActivity extends AppCompatActivity {
 
