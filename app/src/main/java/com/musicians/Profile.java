@@ -2,6 +2,8 @@ package com.musicians;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import com.example.musicians.R;
+
 
 public class Profile extends AppCompatActivity {
 
