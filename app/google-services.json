@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "942932015312",
+    "firebase_url": "https://musician-app-173c3.firebaseio.com",
+    "project_id": "musician-app-173c3",
+    "storage_bucket": "musician-app-173c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942932015312:android:7eac55338dccf647",
+        "android_client_info": {
+          "package_name": "com.example.musicians"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942932015312-fqjhi68c1l96r2dvu6tcslt3qcbreg7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaX6QEeLqVYELNeTSwisQmQiJ6PSqNDEQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
