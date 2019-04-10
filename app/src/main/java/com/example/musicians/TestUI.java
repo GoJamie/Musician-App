@@ -45,13 +45,13 @@ public class TestUI extends BaseActivity implements
         setContentView(R.layout.activity_google);
 
         // Views
-        mStatusTextView = findViewById(R.id.status);
-        mDetailTextView = findViewById(R.id.detail);
+//        mStatusTextView = findViewById(R.id.status);
+//        mDetailTextView = findViewById(R.id.detail);
 
         // Button listeners
         findViewById(R.id.signInButton).setOnClickListener(this);
-        findViewById(R.id.signOutButton).setOnClickListener(this);
-        findViewById(R.id.disconnectButton).setOnClickListener(this);
+//        findViewById(R.id.signOutButton).setOnClickListener(this);
+//        findViewById(R.id.disconnectButton).setOnClickListener(this);
 
         // [START config_signin]
         // Configure Google Sign In
@@ -73,6 +73,8 @@ public class TestUI extends BaseActivity implements
     @Override
     public void onStart() {
         super.onStart();
+        //log out in each start
+        signOut();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
@@ -120,6 +122,7 @@ public class TestUI extends BaseActivity implements
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
+                            startActivity(new Intent(TestUI.this, EventList.class));
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -172,19 +175,7 @@ public class TestUI extends BaseActivity implements
 
     private void updateUI(FirebaseUser user) {
         hideProgressDialog();
-        if (user != null) {
-            mStatusTextView.setText(getString(R.string.google_status_fmt, user.getEmail()));
-            mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
 
-            findViewById(R.id.signInButton).setVisibility(View.GONE);
-            findViewById(R.id.signOutAndDisconnect).setVisibility(View.VISIBLE);
-        } else {
-            mStatusTextView.setText(R.string.signed_out);
-            mDetailTextView.setText(null);
-
-            findViewById(R.id.signInButton).setVisibility(View.VISIBLE);
-            findViewById(R.id.signOutAndDisconnect).setVisibility(View.GONE);
-        }
     }
 
     @Override
@@ -192,10 +183,6 @@ public class TestUI extends BaseActivity implements
         int i = v.getId();
         if (i == R.id.signInButton) {
             signIn();
-        } else if (i == R.id.signOutButton) {
-            signOut();
-        } else if (i == R.id.disconnectButton) {
-            revokeAccess();
         }
     }
 }
