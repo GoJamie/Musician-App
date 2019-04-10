@@ -10,6 +10,7 @@ import android.widget.ListView;
 // if a message is sent: this should be called to update the messages notifyDataSetChanged(). However it may not be needed due to the onitem click listener.
 
 // Create a message handling object as an anonymous class.
+/*
 private OnItemClickListener messageClickedHandler = new OnItemClickListener() {
 public void onItemClick(AdapterView parent, View v, int position, long id) {
         // Do something in response to the click
@@ -18,7 +19,7 @@ public void onItemClick(AdapterView parent, View v, int position, long id) {
         };
 
         messages_list.setOnItemClickListener(messageClickedHandler);
-
+*/
 public class ForumPage extends AppCompatActivity {
 
 
@@ -44,11 +45,6 @@ public class ForumPage extends AppCompatActivity {
         // Attach cursor adapter to the messages_list
         messages_list.setAdapter(MessageAdapter);
     }
-
-
-
-
-
 
 
 }
