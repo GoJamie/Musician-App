@@ -159,7 +159,8 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:padding="10dp"
-                    android:src="@drawable/forumor" />
+                    android:src="@drawable/forumor"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
