@@ -76,7 +76,8 @@
         </activity>
         <activity
             android:name=".TestUI"
-            android:label="@string/label_google_sign_in" >
+
+            android:theme="@style/Theme.AppCompat.NoActionBar">
 
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
