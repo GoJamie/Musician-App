@@ -37,6 +37,8 @@ dependencies {
     // Google Sign In SDK (only required for Google Sign In)
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
 
+    // Firebase firesotre
+    implementation 'com.google.firebase:firebase-firestore:18.2.0'
 }
 
 com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
