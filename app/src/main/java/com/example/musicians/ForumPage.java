@@ -17,7 +17,7 @@ public void onItemClick(AdapterView parent, View v, int position, long id) {
         }
         };
 
-        listView.setOnItemClickListener(messageClickedHandler);
+        messages_list.setOnItemClickListener(messageClickedHandler);
 
 public class ForumPage extends AppCompatActivity {
 
