@@ -18,7 +18,7 @@
         android:layout_height="65dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="#2b4776"
+        android:background="#FFA500"
         android:text="Create New Event"
         android:textAlignment="center"
         android:textColor="#FFFCFAFA"
@@ -88,7 +88,7 @@
             android:layout_marginTop="35dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#27b061"
+            android:background="#FFA500"
             android:textColor="#FFFCFAFA"
             android:text="Create" />
 
