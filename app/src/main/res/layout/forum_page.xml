@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="c">
-
+    android:background="@color/grey_dim">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,10 +20,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="8dp"
-            android:background="#2b4776"
+            android:background="@color/orange"
             android:text="Forum page"
             android:textAlignment="center"
-            android:textColor="#FFFCFAFA"
+            android:textColor="@color/white"
             android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,16 +34,17 @@
     <ListView
         android:id="@+id/messages_list"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/linearLayout2"
-        android:layout_below="@+id/linear_top"/>
+        android:layout_height="fill_parent"
+        android:stackFromBottom="true"
+        android:layout_above="@+id/linear_bottom"
+        android:layout_below="@+id/linear_top" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/linear_bottom"
         android:layout_width="395dp"
         android:layout_height="180dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="307dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:orientation="vertical"
@@ -53,7 +54,7 @@
         android:layout_alignParentBottom="true">
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/edit_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -61,15 +62,16 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="Write your message here"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@color/white"/>
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/send_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
             android:background="#27b061"
-            android:text="Submit"
+            android:text="Send"
             android:textColor="@color/white" />
     </LinearLayout>
 
