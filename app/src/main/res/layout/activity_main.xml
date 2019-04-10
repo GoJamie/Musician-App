@@ -15,7 +15,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_marginTop="-15dp"
-        android:layout_height="300dp"
+        android:layout_height="305dp"
         android:src="@drawable/music1"/>
 
 
