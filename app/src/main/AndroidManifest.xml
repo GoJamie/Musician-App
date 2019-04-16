@@ -66,7 +66,9 @@
         <activity
             android:name=".EventList"
             android:label="EventList"
+            android:windowSoftInputMode="adjustPan"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

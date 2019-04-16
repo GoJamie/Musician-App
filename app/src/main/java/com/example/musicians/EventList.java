@@ -38,6 +38,10 @@ public class EventList extends AppCompatActivity {
         Date date = new Date();
         //dateFormat.format((TemporalAccessor) date);
         events.add(new Event("Polar Bear Pitching", "Oulu City Center", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
+        events.add(new Event("Polar Bear Pitching", "Oulu City Center", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
+        events.add(new Event("Polar Bear Pitching", "Oulu City Center", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
+        events.add(new Event("Polar Bear Pitching", "Oulu City Center", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
+        events.add(new Event("Polar Bear Pitching", "Oulu City Center", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
     }
 
     private void initializeAdapter(){
