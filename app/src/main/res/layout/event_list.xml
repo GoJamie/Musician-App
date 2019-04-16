@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--TODO: Add proper colors-->
 
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -14,10 +14,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
-        android:background="#2b4776"
         android:text="Events"
         android:textAlignment="center"
-        android:textColor="#FFFCFAFA"
+        android:textColor="@color/white"
+        android:background="@color/orange"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="17dp"
-            android:hint="Location"
+            android:hint="Location: "
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -118,124 +118,7 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rv"
+        android:id="@+id/event_recycler"
         />
-    <LinearLayout
-        android:layout_width="413dp"
-        android:layout_height="440dp"
-        android:layout_marginTop="7dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/own_event_checkbox">
-        <!-- A CardView that contains a TextView -->
-        <android.support.v7.widget.CardView
-            android:id="@+id/event_card_1"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            app:cardCornerRadius="4dp">
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/event_name_1"
-                    android:layout_width="344dp"
-                    android:layout_height="37dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginBottom="147dp"
-                    android:text="Public event for saxophone players"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/location_title"
-                    android:layout_width="89dp"
-                    android:layout_height="37dp"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="1dp"
-                    android:text="Location:"
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/event_name_1" />
-
-                <TextView
-                    android:id="@+id/location"
-                    android:layout_width="295dp"
-                    android:layout_height="37dp"
-                    android:text="Oulu, Ouluhalli"
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/location_title"
-                    app:layout_constraintTop_toBottomOf="@+id/event_name_1" />
-
-                <TextView
-                    android:id="@+id/time"
-                    android:layout_width="131dp"
-                    android:layout_height="37dp"
-                    android:layout_marginEnd="168dp"
-                    android:text="12.3.2019"
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toTopOf="@+id/private_public"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/time_title"
-                    app:layout_constraintTop_toBottomOf="@+id/location_title" />
-
-                <TextView
-                    android:id="@+id/time_title"
-                    android:layout_width="89dp"
-                    android:layout_height="37dp"
-                    android:layout_marginStart="25dp"
-                    android:text="Time:"
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/location_title" />
-
-                <TextView
-                    android:id="@+id/private_public"
-                    android:layout_width="131dp"
-                    android:layout_height="37dp"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginEnd="43dp"
-                    android:layout_marginBottom="34dp"
-                    android:text="Public event"
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/participants_amount"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/time_title" />
-
-                <TextView
-                    android:id="@+id/participants_amount"
-                    android:layout_width="203dp"
-                    android:layout_height="37dp"
-                    android:layout_marginEnd="11dp"
-                    android:layout_marginBottom="34dp"
-                    android:text="10 participants"
-                    android:textAlignment="textEnd"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/time" />
-
-            </android.support.constraint.ConstraintLayout>
-        </android.support.v7.widget.CardView>
-
-    </LinearLayout>
-
 
 </android.support.constraint.ConstraintLayout>

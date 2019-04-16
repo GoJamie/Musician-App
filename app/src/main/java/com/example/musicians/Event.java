@@ -1,8 +1,8 @@
-package com.musicians;
+package com.example.musicians;
 
 import java.util.Date;
 
-public class event_information extends Event{
+public class Event extends EventList {
     String name;
     Date time;
     String location;
@@ -10,8 +10,9 @@ public class event_information extends Event{
     String owner;
     String city;
     String address;
+    String private_public;
 
-    event_information(String name, String location, String city, String address, Date time, int participants, String owner) {
+    Event(String name, String location, String city, String address, Date time, int participants, String owner, String private_public) {
         this.name = name; // The name of the event
         this.location = location; // The location of the event
         this.city = city; // The city of the event
@@ -19,5 +20,6 @@ public class event_information extends Event{
         this.time = time; // The time of the event
         this.participants = participants; // The number of participants to the event
         this.owner = owner; // The person who has created the event
+        this.private_public = private_public; // Whether the event is private or public
     }
 }
