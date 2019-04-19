@@ -21,7 +21,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         TextView EventLocation;
         TextView EventTime;
         TextView EventTimeTitle;
-        TextView EventPrivatePublic;
         TextView EventParticipantsAmount;
 
 
@@ -34,7 +33,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             EventLocation = eventView.findViewById(R.id.event_location);
             EventTime = eventView.findViewById(R.id.event_time);
             EventTimeTitle = eventView.findViewById(R.id.event_time_title);
-            EventPrivatePublic = eventView.findViewById(R.id.event_private_public);
         }
     }
 
@@ -62,7 +60,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         EventViewHolder.EventParticipantsAmount.setText(String.valueOf(Events.get(i).participants));
         EventViewHolder.EventLocation.setText(Events.get(i).city);
         EventViewHolder.EventTime.setText(Events.get(i).time);
-        EventViewHolder.EventPrivatePublic.setText(Events.get(i).private_public);
 
     }
 
