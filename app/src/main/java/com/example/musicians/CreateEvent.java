@@ -138,6 +138,7 @@ public class CreateEvent extends AppCompatActivity {
                         create_event.put("address", address_);
                         create_event.put("time", time_);
                         create_event.put("user", username);
+                        create_event.put("participants", 1);
                         db.collection("events").add(create_event)
                                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                     @Override

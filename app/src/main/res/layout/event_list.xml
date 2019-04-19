@@ -4,6 +4,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey_dim">
@@ -78,31 +79,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-    <CheckBox
-        android:id="@+id/private_checkbox"
-        android:layout_width="160dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="34dp"
-        android:text="Private"
-        app:layout_constraintEnd_toStartOf="@+id/tvDate4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <CheckBox
         android:id="@+id/own_event_checkbox"
         android:layout_width="160dp"
         android:layout_height="17dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="34dp"
-        android:layout_marginBottom="447dp"
         android:text="Own Events"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tvDate4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/joined_event_checkbox" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <CheckBox
         android:id="@+id/joined_event_checkbox"
@@ -111,10 +99,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="34dp"
+        android:layout_marginBottom="8dp"
         android:text="Joined Events"
+        app:layout_constraintBottom_toTopOf="@+id/event_recycler"
         app:layout_constraintEnd_toStartOf="@+id/tvDate4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/private_checkbox" />
+        app:layout_constraintTop_toBottomOf="@+id/own_event_checkbox" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/event_recycler"

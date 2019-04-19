@@ -45,7 +45,7 @@ public class EventList extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                                 Map<String, Object> event = document.getData();
-                                events.add(new Event(event.get("name").toString(),event.get("city").toString(),event.get("address").toString(),event.get("date").toString(),Integer.parseInt(event.get("participants").toString()),event.get("owner").toString(),event.get("private_public").toString()));
+                                events.add(new Event(event.get("name").toString(),event.get("city").toString(),event.get("address").toString(),event.get("date").toString(),Integer.parseInt(event.get("participants").toString()),event.get("owner").toString()));
                             }
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
@@ -63,11 +63,11 @@ public class EventList extends AppCompatActivity {
         //DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy ss:mm:HH");
         String date = "2018/06/24";
         //dateFormat.format((TemporalAccessor) date);
-        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
-        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
-        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
-        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
-        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
+        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123"));
+        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123"));
+        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123"));
+        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123"));
+        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123"));
     }
 
     private void initializeAdapter(){
