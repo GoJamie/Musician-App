@@ -42,13 +42,14 @@ public class TestUI extends BaseActivity implements
     private GoogleSignInClient mGoogleSignInClient;
     private TextView mStatusTextView;
     private TextView mDetailTextView;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    public FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        setContentView(R.layout.activity_login);
 
         // Views
 //        mStatusTextView = findViewById(R.id.status);
@@ -148,6 +149,8 @@ public class TestUI extends BaseActivity implements
                                             startActivity(new Intent(TestUI.this, EventList.class));
                                         } else {
                                             Log.d(TAG, "No such document");
+
+
                                             startActivity(new Intent(TestUI.this, EditProfilePage.class));
                                         }
                                     } else {
