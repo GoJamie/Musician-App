@@ -42,7 +42,7 @@ public class TestUI extends BaseActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_google);
+        setContentView(R.layout.activity_login);
 
         // Views
 //        mStatusTextView = findViewById(R.id.status);
