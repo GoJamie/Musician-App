@@ -158,7 +158,7 @@ public class TestUI extends BaseActivity implements
                                         if (document.exists()) {
                                             Log.d(TAG, "DocumentSnapshot data: " + document.getData());
 
-                                            startActivity(new Intent(TestUI.this, EventList.class));
+                                            startActivity(new Intent(TestUI.this,  Dashboard.class));
                                         } else {
                                             Log.d(TAG, "No such document");
 
