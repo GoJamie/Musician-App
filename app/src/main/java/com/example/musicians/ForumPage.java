@@ -87,6 +87,7 @@ public class ForumPage extends AppCompatActivity {
         MessageCursorAdapter MessageAdapter = new MessageCursorAdapter(this, MessageCursor);
         // Attach cursor adapter to the messages_list
         messages_list.setAdapter(MessageAdapter);
+
     }
 
 
