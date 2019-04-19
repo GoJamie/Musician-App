@@ -165,18 +165,11 @@
         android:id="@+id/edit_profile_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
+
         android:background="@color/orange"
 
         android:textColor="#FFFCFAFA"
         android:text="Edit Profile" />
-=======
-        android:layout_marginTop="35dp"
-        android:background="#27b061"
-        android:text="Edit Profile"
-        android:textColor="#FFFCFAFA" />
->>>>>>> 1dd370617ce90903e8148ec8edac4b656e97371d
-
 
 </LinearLayout>
 
