@@ -6,14 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_marginTop="5dp"
+    android:background="@drawable/background"
     tools:context=".EditProfilePage">
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <TextView
             android:id="@+id/edit_profile"
             android:layout_width="match_parent"
@@ -21,7 +20,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="8dp"
-            android:background="#2b4776"
+            android:background="@color/orange"
             android:text="Edit Profile"
             android:textAlignment="center"
             android:textColor="#FFFCFAFA"
@@ -30,38 +29,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
     </LinearLayout>
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="30dp">
-
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input_firstname"
             android:layout_width="205dp"
-
             android:layout_height="wrap_content"
-
+            android:textColorHint="@color/white"
             app:errorEnabled="true">
-
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/firstName_profile"
                 android:layout_width="205dp"
                 android:layout_height="wrap_content"
                 android:hint="First Name"
                 android:inputType="text" />
-
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input_lastname"
             android:layout_width="205dp"
-
-
+            android:textColorHint="@color/white"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
-
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/lastName_profile"
                 android:layout_width="205dp"
@@ -70,7 +62,6 @@
                 android:inputType="text" />
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -78,11 +69,9 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input_email"
             android:layout_width="match_parent"
-
+            android:textColorHint="@color/white"
             android:layout_height="wrap_content"
-
             app:errorEnabled="true">
-
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/email_profile"
                 android:layout_width="match_parent"
@@ -91,7 +80,6 @@
                 android:inputType="text" />
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -99,80 +87,59 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input_phone"
             android:layout_width="match_parent"
-
+            android:textColorHint="@color/white"
             android:layout_height="wrap_content"
-
             app:errorEnabled="true">
-
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/mobile_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Mobile Number"
                 android:inputType="text" />
-
         </android.support.design.widget.TextInputLayout>
-
-
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input_description"
             android:layout_width="match_parent"
-
+            android:textColorHint="@color/white"
             android:layout_height="wrap_content"
-
             app:errorEnabled="true">
-
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/aboutMe_profile"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
                 android:hint="About Me"
                 android:inputType="textMultiLine" />
-
         </android.support.design.widget.TextInputLayout>
-
-
-
-
     </LinearLayout>
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input_country"
             android:layout_width="205dp"
-
+            android:textColorHint="@color/white"
             android:layout_height="wrap_content"
-
             app:errorEnabled="true">
-
             <android.support.design.widget.TextInputEditText
                 android:layout_width="205dp"
                 android:layout_height="wrap_content"
                 android:hint="Country"
                 android:inputType="text"
                 />
-
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input_city"
             android:layout_width="205dp"
-
-
+            android:textColorHint="@color/white"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
-
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/city_profile"
                 android:layout_width="205dp"
@@ -181,12 +148,10 @@
                 android:inputType="text" />
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <TextView
             android:id="@+id/tvDate2"
             android:layout_width="match_parent"
@@ -194,34 +159,20 @@
             android:layout_centerHorizontal="true"
             android:hint="Change Your's Birthday"
             android:textAlignment="center"
-            android:textColorHint="#FF060606"
+            android:textColorHint="@color/white"
             android:layout_marginTop="5dp"
             android:textSize="30sp" />
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
         <Button
             android:id="@+id/save_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#27b061"
+            android:background="@color/orange"
             android:text="Save"
             android:textColor="#FFFCFAFA" />
     </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
 </LinearLayout>

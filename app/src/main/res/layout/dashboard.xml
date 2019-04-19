@@ -32,12 +32,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/transparent_white_rect"
 
-        android:id="@+id/scrollView"
 
         >
     <LinearLayout
@@ -236,5 +231,5 @@
         </android.support.v7.widget.CardView>
 
     </LinearLayout>
-</ScrollView>
+
 </LinearLayout>
