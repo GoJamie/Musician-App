@@ -11,7 +11,7 @@ public class Dashboard extends AppCompatActivity {
     private CardView create_event;
     private CardView events;
     private CardView profile;
-    private CardView settings;
+    private CardView logout;
 
 
 
@@ -26,7 +26,7 @@ public class Dashboard extends AppCompatActivity {
 
         profile   = (CardView)findViewById(R.id.dash_profile);
 
-        settings   = (CardView)findViewById(R.id.dash_setting);
+        logout   = (CardView)findViewById(R.id.dash_logout);
 
         create_event.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +49,17 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View view) {
 
                 startActivity(new Intent(Dashboard.this, ProfilePage.class));
+
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i=new Intent(Dashboard.this,TestUI.class);
+                i.putExtra("logout", true); // there are many different types of data you can package
+                startActivity(i);
 
             }
         });
