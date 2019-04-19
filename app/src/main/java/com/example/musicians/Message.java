@@ -1,6 +1,6 @@
 package com.example.musicians;
 
-public class Message {
+public class Message extends ForumPage {
     String username;
     String message;
 
