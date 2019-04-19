@@ -39,8 +39,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:hint="Event Name"
-               android:inputType="text"
-               />
+               android:inputType="text" />
 
        </android.support.design.widget.TextInputLayout>
 
@@ -59,16 +58,30 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/text_input_location"
+            android:id="@+id/text_input_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
+
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Location"
-                android:inputType="text"
-                />
+                android:hint="Address"
+                android:inputType="text" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/text_input_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:errorEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                android:inputType="text" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -84,13 +97,13 @@
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/button5"
-            android:layout_marginTop="35dp"
+            android:id="@+id/create_event_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
             android:background="#FFA500"
-            android:textColor="#FFFCFAFA"
-            android:text="Create" />
+            android:text="Create"
+            android:textColor="#FFFCFAFA" />
 
 
 

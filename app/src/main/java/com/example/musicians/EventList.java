@@ -9,17 +9,12 @@ import android.util.Log;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Date;
 import java.util.Map;
 
 // Tutorial used to create recycler view:
@@ -50,7 +45,7 @@ public class EventList extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                                 Map<String, Object> event = document.getData();
-                                events.add(new Event(event.get("name").toString(),event.get("location").toString(),event.get("city").toString(),event.get("address").toString(),event.get("date").toString(),Integer.parseInt(event.get("participants").toString()),event.get("owner").toString(),event.get("private_public").toString()));
+                                events.add(new Event(event.get("name").toString(),event.get("city").toString(),event.get("address").toString(),event.get("date").toString(),Integer.parseInt(event.get("participants").toString()),event.get("owner").toString(),event.get("private_public").toString()));
                             }
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
@@ -68,11 +63,11 @@ public class EventList extends AppCompatActivity {
         //DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy ss:mm:HH");
         String date = "2018/06/24";
         //dateFormat.format((TemporalAccessor) date);
-        events.add(new Event("Polar Bear Pitching", "Oulu City Center", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
-        events.add(new Event("Polar Bear Pitching", "Oulu City Center", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
-        events.add(new Event("Polar Bear Pitching", "Oulu City Center", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
-        events.add(new Event("Polar Bear Pitching", "Oulu City Center", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
-        events.add(new Event("Polar Bear Pitching", "Oulu City Center", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
+        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
+        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
+        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
+        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
+        events.add(new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123", "public"));
     }
 
     private void initializeAdapter(){
