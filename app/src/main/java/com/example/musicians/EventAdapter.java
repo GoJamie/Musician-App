@@ -56,10 +56,10 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     @Override
     public void onBindViewHolder(EventViewHolder EventViewHolder, int i) {
-        EventViewHolder.EventName.setText(Events.get(i).name);
-        EventViewHolder.EventParticipantsAmount.setText(String.valueOf(Events.get(i).participants));
-        EventViewHolder.EventLocation.setText(Events.get(i).city);
-        EventViewHolder.EventTime.setText(Events.get(i).time);
+        EventViewHolder.EventName.setText(Events.get(i).getName());
+        EventViewHolder.EventParticipantsAmount.setText(String.valueOf(Events.get(i).getParticipants()));
+        EventViewHolder.EventLocation.setText(Events.get(i).getCity());
+        EventViewHolder.EventTime.setText(Events.get(i).getTime());
 
     }
 
