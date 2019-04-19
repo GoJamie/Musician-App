@@ -21,7 +21,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         TextView EventLocation;
         TextView EventTime;
         TextView EventTimeTitle;
-        TextView EventPrivatePublic;
         TextView EventParticipantsAmount;
 
 
@@ -34,7 +33,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             EventLocation = eventView.findViewById(R.id.event_location);
             EventTime = eventView.findViewById(R.id.event_time);
             EventTimeTitle = eventView.findViewById(R.id.event_time_title);
-            EventPrivatePublic = eventView.findViewById(R.id.event_private_public);
         }
     }
 
@@ -60,10 +58,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     public void onBindViewHolder(EventViewHolder EventViewHolder, int i) {
         EventViewHolder.EventName.setText(Events.get(i).name);
         EventViewHolder.EventParticipantsAmount.setText(String.valueOf(Events.get(i).participants));
-        EventViewHolder.EventLocation.setText(Events.get(i).location);
-        // TODO: Need to figure out how to print out the time in textview
-        //EventViewHolder.EventTime.setText(println(Events.get(i).time));
-        EventViewHolder.EventPrivatePublic.setText(Events.get(i).private_public);
+        EventViewHolder.EventLocation.setText(Events.get(i).city);
+        EventViewHolder.EventTime.setText(Events.get(i).time);
 
     }
 
