@@ -66,7 +66,7 @@ public class EventList extends AppCompatActivity {
         List<Message> messagelist = new ArrayList<Message>();
         messagelist.add(new Message("Sampo","Hi"));
 
-        Event example_event1 = new Event("Polar Bear Pitching", "Oulu", "Torikatu 1", date, 6, "Sampo123",messagelist);
+        Event example_event1 = new Event("Polar Bear Pitching", "test1", "Oulu", "Torikatu 1", date, 6, "Sampo123",messagelist);
 
         db.collection("events")
                 .add(example_event1)
@@ -83,7 +83,7 @@ public class EventList extends AppCompatActivity {
                     }
                 });
 
-        Event example_event2 = new Event("Polar Panda Pitching", "Helsinki", "Torikatu 1", date, 6, "Nechir123",messagelist);
+        Event example_event2 = new Event("Polar Panda Pitching", "test2", "Helsinki", "Torikatu 1", date, 6, "Nechir123",messagelist);
 
         db.collection("events")
                 .add(example_event2)

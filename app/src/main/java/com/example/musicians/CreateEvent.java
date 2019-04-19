@@ -23,8 +23,10 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class CreateEvent extends AppCompatActivity {
@@ -132,14 +134,10 @@ public class CreateEvent extends AppCompatActivity {
 
                         String time_ = mDisplayDate.getText().toString();
 
-                        Map<String, Object> create_event = new HashMap<>();
-                        create_event.put("name", name_);
-                        create_event.put("description", description_);
-                        create_event.put("city", city_);
-                        create_event.put("address", address_);
-                        create_event.put("time", time_);
-                        create_event.put("user", username);
-                        create_event.put("participants", 1);
+                        List<Message> messagelist = new ArrayList<Message>();
+
+                        Event create_event = new Event(name_, description_, city_, address_, time_, 1, username, messagelist);
+
                         db.collection("events").add(create_event)
                                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                     @Override
