@@ -4,17 +4,15 @@ import java.util.Date;
 
 public class Event extends EventList {
     String name;
-    Date time;
-    String location;
+    String time;
     int participants;
     String owner;
     String city;
     String address;
     String private_public;
 
-    Event(String name, String location, String city, String address, Date time, int participants, String owner, String private_public) {
+    Event(String name, String city, String address, String time, int participants, String owner, String private_public) {
         this.name = name; // The name of the event
-        this.location = location; // The location of the event
         this.city = city; // The city of the event
         this.address = address; // The address of the event
         this.time = time; // The time of the event
