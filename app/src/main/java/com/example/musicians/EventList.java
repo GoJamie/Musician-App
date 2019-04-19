@@ -74,5 +74,4 @@ public class EventList extends AppCompatActivity {
         RecyclerView.Adapter event_adapter = new EventAdapter(events);
         event_recycler.setAdapter(event_adapter);
     }
-
 }
