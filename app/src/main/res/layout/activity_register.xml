@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/background"
     android:orientation="vertical"
     android:layout_marginTop="5dp">
     tools:context=".Register" >
@@ -22,7 +22,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="8dp"
-            android:background="#2b4776"
+            android:background="@color/orange"
             android:text="Create New Account"
             android:textAlignment="center"
             android:textColor="#FFFCFAFA"
@@ -42,7 +42,7 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input_firstname"
             android:layout_width="205dp"
-
+            android:textColorHint="@color/white"
             android:layout_height="wrap_content"
 
             app:errorEnabled="true">
@@ -58,7 +58,7 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input_lastname"
             android:layout_width="205dp"
-
+            android:textColorHint="@color/white"
 
             android:layout_height="wrap_content"
             app:errorEnabled="true">
@@ -76,7 +76,7 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input_email"
             android:layout_width="match_parent"
-
+            android:textColorHint="@color/white"
             android:layout_height="wrap_content"
 
             app:errorEnabled="true">
@@ -99,7 +99,7 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input_password"
             android:layout_width="205dp"
-
+            android:textColorHint="@color/white"
             android:layout_height="wrap_content"
 
             app:errorEnabled="true">
@@ -115,7 +115,7 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input_confirmPassword"
             android:layout_width="205dp"
-
+            android:textColorHint="@color/white"
 
             android:layout_height="wrap_content"
             app:errorEnabled="true">
@@ -134,7 +134,7 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/text_input_phone"
             android:layout_width="match_parent"
-
+            android:textColorHint="@color/white"
             android:layout_height="wrap_content"
 
             app:errorEnabled="true">
@@ -162,7 +162,7 @@
             android:layout_centerHorizontal="true"
             android:hint="What's Your Birthday?"
             android:textAlignment="center"
-            android:textColorHint="#FF060606"
+            android:textColorHint="@color/white"
             android:layout_marginTop="10dp"
             android:textSize="30sp" />
     </LinearLayout>
@@ -178,7 +178,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
-            android:background="#27b061"
+            android:background="@color/orange"
             android:text="Register"
             android:textColor="#FFFCFAFA" />
     </LinearLayout>

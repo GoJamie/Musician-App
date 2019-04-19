@@ -7,12 +7,33 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ProfilePage"
     android:orientation="vertical"
-    tools:showIn="@layout/app_bar_profile_page">
+    android:background="@drawable/background"
+   >
 
-
-    <RelativeLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="270dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            android:background="#FFA500"
+            android:text="Profile"
+            android:textAlignment="center"
+            android:textColor="#FFFCFAFA"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+    </LinearLayout>
+
 
         <LinearLayout
 
@@ -36,12 +57,11 @@
                 android:src="@drawable/image"
                 android:text="Muhammad Waqas"
                 android:textAlignment="center"
-                android:textColor="#fff"
+                android:textColor="@color/white"
                 android:textSize="21sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="360dp"
@@ -57,8 +77,9 @@
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/email"
-                android:tint="@android:color/white"
+                android:src="@drawable/email1"
+                android:tint="#FFA500"
+
                 />
             <TextView
                 android:textStyle="bold"
@@ -66,6 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
+                android:textColor="@color/white"
                 android:text="Wiliam@gmail.com"/>
         </LinearLayout>
         <LinearLayout
@@ -78,7 +100,7 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/mobile"
-                android:tint="@android:color/white"
+                android:tint="#FFA500"
                 />
             <TextView
                 android:textStyle="bold"
@@ -87,6 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
+                android:textColor="@color/white"
                 android:text="+266 225 225"/>
         </LinearLayout>
         <LinearLayout
@@ -99,7 +122,7 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/location"
-                android:tint="@android:color/white"
+                android:tint="#FFA500"
                 />
             <TextView
                 android:textStyle="bold"
@@ -108,6 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
+                android:textColor="@color/white"
                 android:text="Yliopistokatu, 14 301, Oulu"/>
         </LinearLayout>
         <LinearLayout
@@ -120,11 +144,11 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/interest"
-                android:tint="@android:color/white"
+                android:tint="#FFA500"
                 />
             <TextView
                 android:textStyle="bold"
-
+                android:textColor="@color/white"
                 android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,11 +165,11 @@
         android:id="@+id/edit_profile_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:background="#27b061"
-        android:text="Edit Profile"
-        android:textColor="#FFFCFAFA" />
 
+        android:background="@color/orange"
+
+        android:textColor="#FFFCFAFA"
+        android:text="Edit Profile" />
 
 </LinearLayout>
 
