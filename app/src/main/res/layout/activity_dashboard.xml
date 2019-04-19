@@ -43,7 +43,7 @@
         android:orientation="horizontal">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/events"
+            android:id="@+id/dash_events"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp"
@@ -89,6 +89,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:id="@+id/dash_profile"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp"
@@ -142,6 +143,7 @@
         android:orientation="horizontal">
 
         <android.support.v7.widget.CardView
+            android:id="@+id/dash_create"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp"
@@ -159,14 +161,13 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:padding="10dp"
-                    android:src="@drawable/forumor"
-                    />
+                    android:src="@drawable/forumor" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Forum"
+                    android:text="Create Event"
                     android:textColor="#ffffff"
                     android:textStyle="bold" />
 
@@ -180,13 +181,14 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Check Forum Page"
+                    android:text="Create New Event"
                     android:textColor="#ffffff" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:id="@+id/dash_setting"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp"
