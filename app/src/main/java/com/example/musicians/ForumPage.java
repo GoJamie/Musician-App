@@ -14,7 +14,7 @@ import android.widget.ListView;
 private OnItemClickListener messageClickedHandler = new OnItemClickListener() {
 public void onItemClick(AdapterView parent, View v, int position, long id) {
         // Do something in response to the click
-        // Add item to database --> add new message forumpage.
+        // Add item to database --> add new message forum page.
         }
         };
 
