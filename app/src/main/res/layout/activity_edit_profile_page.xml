@@ -47,11 +47,11 @@
             app:errorEnabled="true">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/firstName_profile"
                 android:layout_width="205dp"
                 android:layout_height="wrap_content"
                 android:hint="First Name"
-                android:inputType="text"
-                />
+                android:inputType="text" />
 
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
@@ -61,7 +61,9 @@
 
             android:layout_height="wrap_content"
             app:errorEnabled="true">
+
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/lastName_profile"
                 android:layout_width="205dp"
                 android:layout_height="wrap_content"
                 android:hint="Last Name"
@@ -82,11 +84,11 @@
             app:errorEnabled="true">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/email_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
-                android:inputType="text"
-                />
+                android:inputType="text" />
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 
@@ -103,11 +105,11 @@
             app:errorEnabled="true">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/mobile_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Mobile Number"
-                android:inputType="text"
-                />
+                android:inputType="text" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -128,6 +130,7 @@
             app:errorEnabled="true">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/aboutMe_profile"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
                 android:hint="About Me"
@@ -169,7 +172,9 @@
 
             android:layout_height="wrap_content"
             app:errorEnabled="true">
+
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/city_profile"
                 android:layout_width="205dp"
                 android:layout_height="wrap_content"
                 android:hint="City"
@@ -200,12 +205,12 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/save_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#27b061"
-            android:textColor="#FFFCFAFA"
-            android:text="Save" />
+            android:text="Save"
+            android:textColor="#FFFCFAFA" />
     </LinearLayout>
 
 

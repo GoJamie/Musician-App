@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:id="@+id/event_card"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_gravity="center"
+    app:cardCornerRadius="4dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/event_name"
+            android:layout_width="344dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="147dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/event_location_title"
+            android:layout_width="89dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="8dp"
+            android:text="Location:"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/event_time_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_name" />
+
+        <TextView
+            android:id="@+id/event_location"
+            android:layout_width="295dp"
+            android:layout_height="37dp"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/event_location_title"
+            app:layout_constraintTop_toBottomOf="@+id/event_name" />
+
+        <TextView
+            android:id="@+id/event_time"
+            android:layout_width="131dp"
+            android:layout_height="37dp"
+            android:layout_marginEnd="168dp"
+            android:text="12.3.2019"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/event_private_public"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/event_time_title"
+            app:layout_constraintTop_toBottomOf="@+id/event_location_title" />
+
+        <TextView
+            android:id="@+id/event_time_title"
+            android:layout_width="89dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="25dp"
+            android:text="Time:"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_location_title" />
+
+        <TextView
+            android:id="@+id/event_private_public"
+            android:layout_width="131dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="43dp"
+            android:layout_marginBottom="34dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/event_participants_amount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_time_title" />
+
+        <TextView
+            android:id="@+id/event_participants_amount"
+            android:layout_width="203dp"
+            android:layout_height="37dp"
+            android:layout_marginEnd="11dp"
+            android:gravity="center"
+            android:layout_marginBottom="34dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_time" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

@@ -3,26 +3,97 @@ package com.example.musicians;
 import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class EditProfilePage extends AppCompatActivity {
     private static final String TAG = "EditProfilePage";
 
     private TextView mDisplayDate;
+    private Button saveButton;
+    private EditText firstName;
+    private EditText lastName;
+    private EditText email;
+    private EditText mobile;
+    private EditText aboutMe;
+    private EditText city;
+
+    public FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile_page);
+        firstName   = (EditText)findViewById(R.id.firstName_profile);
+
+        lastName   = (EditText)findViewById(R.id.lastName_profile);
+
+        email   = (EditText)findViewById(R.id.email_profile);
+
+        mobile   = (EditText)findViewById(R.id.mobile_profile);
+
+        aboutMe   = (EditText)findViewById(R.id.aboutMe_profile);
+
+        city   = (EditText)findViewById(R.id.city_profile);
+
+
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+
+        DocumentReference docRef = db.collection("users").document(uid);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Map<String, Object> a  = document.getData();
+                        firstName.setText(a.get("firstname").toString());
+
+                        lastName.setText(a.get("lastname").toString());
+
+                        city.setText(a.get("city").toString());
+
+                        email.setText(a.get("email").toString());
+
+                        aboutMe.setText(a.get("aboutMe").toString());
+
+                        mDisplayDate.setText(a.get("date").toString());
+
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+
 
         mDisplayDate = (TextView) findViewById(R.id.tvDate2);
+        saveButton = (Button) findViewById(R.id.save_edit);
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +120,56 @@ public class EditProfilePage extends AppCompatActivity {
 
                 String date = month + "/" + day + "/" + year;
                 mDisplayDate.setText(date);
+
             }
         };
+
+        saveButton.setOnClickListener(
+                new View.OnClickListener()
+                {
+                    public void onClick(View view)
+                    {
+                        String firstname_ = firstName.getText().toString();
+
+                        String lastname_ = lastName.getText().toString();
+
+                        String mobile_ = mobile.getText().toString();
+
+                        String city_ = city.getText().toString();
+
+                        String email_ = email.getText().toString();
+
+                        String about_me_ = aboutMe.getText().toString();
+                        
+                        String date = mDisplayDate.getText().toString();
+
+                        Map<String, Object> edit_profile = new HashMap<>();
+                        edit_profile.put("firstname", firstname_);
+                        edit_profile.put("lastname", lastname_);
+                        edit_profile.put("city", city_);
+                        edit_profile.put("email", email_);
+                        edit_profile.put("aboutMe", about_me_);
+                        edit_profile.put("date", date);
+
+
+
+                        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                        db.collection("users").document(uid)
+                                .set(edit_profile)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d(TAG, "DocumentSnapshot successfully written!");
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w(TAG, "Error writing document", e);
+                                    }
+                                });
+                    }
+                });
+
     }
 }

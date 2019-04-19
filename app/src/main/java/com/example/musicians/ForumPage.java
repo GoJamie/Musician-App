@@ -36,14 +36,14 @@ public class ForumPage extends AppCompatActivity {
         //SQLiteDatabase db = handler.getWritableDatabase();
         // Query for items from the database and get a cursor back
         // TODO need to figure out how to point to a particular event's message database.
-        Cursor MessageCursor = db.rawQuery("SELECT  * FROM message_database", null);
+        //Cursor MessageCursor = db.rawQuery("SELECT  * FROM message_database", null);
 
         // Find ListView to populate
         ListView messages_list = findViewById(R.id.messages_list);
         // Setup cursor adapter using cursor
-        MessageCursorAdapter MessageAdapter = new MessageCursorAdapter(this, MessageCursor);
+        //MessageCursorAdapter MessageAdapter = new MessageCursorAdapter(this, MessageCursor);
         // Attach cursor adapter to the messages_list
-        messages_list.setAdapter(MessageAdapter);
+        //messages_list.setAdapter(MessageAdapter);
     }
 
 

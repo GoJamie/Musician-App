@@ -1,9 +1,11 @@
 package com.musicians;
 
+import com.example.musicians.Event;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+/*
 public class RecyclerViewActivity extends Event {
 
 
@@ -22,4 +24,4 @@ public class RecyclerViewActivity extends Event {
         events.add(new event_information("Some shady event", "Tuusulan Yliopisto", "Tuusula", "Lempon tie 3", todaysdate, 1000, "Erkki"));
     }
 }
-
+*/

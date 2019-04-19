@@ -65,8 +65,10 @@
         </activity>
         <activity
             android:name=".EventList"
-            android:label="@string/title_activity_profile_page"
+            android:label="EventList"
+            android:windowSoftInputMode="adjustPan"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -113,6 +115,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
 
         <meta-data
             android:name="preloaded_fonts"

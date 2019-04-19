@@ -10,12 +10,15 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.Calendar;
 
 public class CreateEvent extends AppCompatActivity {
 
     private static final String TAG = "CreateEvent";
 
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
