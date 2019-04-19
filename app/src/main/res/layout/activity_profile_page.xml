@@ -168,8 +168,8 @@
 
             android:background="@color/orange"
 
-            android:textColor="#FFFCFAFA"
-            android:text="Edit Profile" />
+            android:text="Edit Profile"
+            android:textColor="#FFFCFAFA" />
 
     </LinearLayout>
 

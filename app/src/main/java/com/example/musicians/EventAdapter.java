@@ -60,10 +60,10 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     public void onBindViewHolder(EventViewHolder EventViewHolder, int i) {
         EventViewHolder.EventName.setText(Events.get(i).name);
         EventViewHolder.EventParticipantsAmount.setText(String.valueOf(Events.get(i).participants));
-        EventViewHolder.EventLocation.setText(Events.get(i).location);
-        // TODO: Need to figure out how to print out the time in textview
-        //EventViewHolder.EventTime.setText(println(Events.get(i).time));
-        EventViewHolder.EventPrivatePublic.setText(Events.get(i).private_public);
+//        EventViewHolder.EventLocation.setText(Events.get(i).location);
+//        // TODO: Need to figure out how to print out the time in textview
+//        //EventViewHolder.EventTime.setText(println(Events.get(i).time));
+//        EventViewHolder.EventPrivatePublic.setText(Events.get(i).private_public);
 
     }
 

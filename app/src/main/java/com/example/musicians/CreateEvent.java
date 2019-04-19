@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,13 +37,13 @@ public class CreateEvent extends AppCompatActivity {
 
     private Button CreateButton;
 
-    private EditText name;
+    private TextInputEditText name;
 
-    private EditText description;
+    private TextInputEditText description;
 
-    private EditText address;
+    private TextInputEditText address;
 
-    private EditText city;
+    private TextInputEditText city;
 
     private String username;
 
@@ -53,13 +54,13 @@ public class CreateEvent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
 
-        name   = (EditText)findViewById(R.id.text_input_eventname);
+        name   = (TextInputEditText)findViewById(R.id.text_input_eventname);
 
-        description   = (EditText)findViewById(R.id.text_input_description);
+        description   = (TextInputEditText)findViewById(R.id.text_input_description);
 
-        address   = (EditText)findViewById(R.id.text_input_address);
+        address   = (TextInputEditText)findViewById(R.id.text_input_address);
 
-        city = (EditText)findViewById(R.id.text_input_city);
+        city = (TextInputEditText)findViewById(R.id.text_input_city);
 
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
