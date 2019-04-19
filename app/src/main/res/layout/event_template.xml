@@ -33,7 +33,7 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="1dp"
             android:layout_marginEnd="8dp"
-            android:text="Location:"
+            android:text="City:"
             android:textAlignment="viewStart"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/event_time_title"
