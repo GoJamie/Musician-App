@@ -22,8 +22,8 @@ public class Event {//extends EventList {
         this.participants = participants; // The number of participants to the event
         this.owner = owner; // The person who has created the event
         this.messageList = messageList; // The list of message object
+        this.description = description;
     }
-
 
     public String getName() {
         return name;
