@@ -31,6 +31,9 @@ public class UserList extends AppCompatActivity {
         user_recycler.setLayoutManager(user_manager);
         //initializeData();
         // Add a new document with a generated ID
+        users.add(new User("hello", "asd", "asd", "asd", "asd", "asd", "asd", "asd"));
+        initializeAdapter();
+
         user_recycler.addOnItemTouchListener(
                 new UserRecyclerItemClickListener(context, user_recycler ,new UserRecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {

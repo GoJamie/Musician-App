@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfilePage"></activity>
+        <activity android:name=".ProfilePage" />
         <activity
             android:name=".Dashboard"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -81,6 +81,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".UserList"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".CreateEvent"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -91,15 +101,6 @@
         </activity>
         <activity
             android:name=".Register"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
