@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".CreateEvent"
+    android:background="@drawable/background">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/event_id"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="#FFA500"
+            android:text="Event"
+            android:textAlignment="center"
+            android:textColor="#FFFCFAFA"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textColorHint="@color/white"
+            app:errorEnabled="true">
+
+            <TextView
+                android:id="@+id/event_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Event Name"
+
+                android:textColorHint="#FFFCFAFA"
+                android:inputType="text" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            app:errorEnabled="true">
+
+            <TextView
+
+                android:id="@+id/event_description"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:hint="Description"
+
+                android:textColorHint="#FFFCFAFA"
+                android:inputType="textMultiLine" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            app:errorEnabled="true">
+
+            <TextView
+                android:id="@+id/event_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address"
+
+                android:textColorHint="#FFFCFAFA"
+                android:inputType="text" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:errorEnabled="true">
+
+            <TextView
+
+                android:id="@+id/event_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City"
+
+                android:inputType="text"
+                android:textColorHint="#FFFCFAFA" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/event_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="Event Date"
+            android:textAlignment="center"
+            android:textColorHint="#FFFCFAFA"
+            android:layout_marginTop="10dp"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/event_join"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="#FFA500"
+            android:text="Join"
+            android:textColor="#FFFCFAFA" />
+
+        <Button
+            android:id="@+id/event_show_users"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="#FFA500"
+            android:text="Joined users"
+            android:textColor="#FFFCFAFA" />
+
+        <Button
+            android:id="@+id/event_show_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="#FFA500"
+            android:text="Formpage"
+            android:textColor="#FFFCFAFA" />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
