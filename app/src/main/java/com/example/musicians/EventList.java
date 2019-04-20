@@ -43,7 +43,7 @@ public class EventList extends AppCompatActivity {
         event_recycler = findViewById(R.id.event_recycler);
         LinearLayoutManager event_manager = new LinearLayoutManager(this);
         event_recycler.setLayoutManager(event_manager);
-        initializeData();
+        //initializeData();
         db.collection("events")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -62,7 +62,6 @@ public class EventList extends AppCompatActivity {
                     }
                 });
         // Add a new document with a generated ID
-        initializeAdapter();
         event_recycler.addOnItemTouchListener(
                 new EventRecyclerItemClickListener(context, event_recycler ,new EventRecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
