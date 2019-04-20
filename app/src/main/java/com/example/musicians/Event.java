@@ -2,7 +2,7 @@ package com.example.musicians;
 
 import java.util.List;
 
-public class Event extends EventList {
+public class Event {//extends EventList {
     private String name;
     private String time;
     private String description;
@@ -11,6 +11,8 @@ public class Event extends EventList {
     private String city;
     private String address;
     private List<Message> messageList;
+
+    public Event() {}
 
     public Event(String name, String description, String city, String address, String time, int participants, String owner, List<Message> messageList) {
         this.name = name; // The name of the event
@@ -21,6 +23,7 @@ public class Event extends EventList {
         this.owner = owner; // The person who has created the event
         this.messageList = messageList; // The list of message object
     }
+
 
     public String getName() {
         return name;
