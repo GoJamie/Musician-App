@@ -1,11 +1,14 @@
 package com.example.musicians;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,7 +32,8 @@ public class EventList extends AppCompatActivity {
 
     private RecyclerView event_recycler;
     private static final String TAG = "EventList";
-    private List<Event> events;
+    Context context;
+    private List<Event> events = new ArrayList<>();;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -51,6 +55,7 @@ public class EventList extends AppCompatActivity {
                                 Event data = document.toObject(Event.class);
                                 events.add(data);
                             }
+                            initializeAdapter();
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
                         }
@@ -58,6 +63,16 @@ public class EventList extends AppCompatActivity {
                 });
         // Add a new document with a generated ID
         initializeAdapter();
+        event_recycler.addOnItemTouchListener(
+                new EventRecyclerItemClickListener(context, event_recycler ,new EventRecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        //
+                        startActivity(new Intent(EventList.this, Dashboard.class));
+                    }
+
+                })
+        );
+
     }
 
     private void initializeData(){
