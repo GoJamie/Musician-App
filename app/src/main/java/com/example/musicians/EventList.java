@@ -32,8 +32,8 @@ public class EventList extends AppCompatActivity {
 
     private RecyclerView event_recycler;
     private static final String TAG = "EventList";
-    private List<Event> events;
     Context context;
+    private List<Event> events = new ArrayList<>();;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -55,6 +55,7 @@ public class EventList extends AppCompatActivity {
                                 Event data = document.toObject(Event.class);
                                 events.add(data);
                             }
+                            initializeAdapter();
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
                         }
@@ -71,6 +72,7 @@ public class EventList extends AppCompatActivity {
 
                 })
         );
+
     }
 
     private void initializeData(){
