@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
@@ -13,9 +14,14 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
+import java.util.Map;
 
 public class EventPage extends AppCompatActivity {
 
@@ -59,7 +65,6 @@ public class EventPage extends AppCompatActivity {
 
         join = (Button) findViewById(R.id.event_page_join);
 
-
         mDisplayDate = (TextView) findViewById(R.id.event_page_date);
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +85,7 @@ public class EventPage extends AppCompatActivity {
             }
         });
 
+
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
@@ -92,10 +98,36 @@ public class EventPage extends AppCompatActivity {
             }
         };
 
-
         String event_uid= getIntent().getStringExtra("event_uid");
+        DocumentReference docRef = db.collection("events").document(event_uid);
 
-        
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+
+                        Event data = document.toObject(Event.class);
+
+                        name.setText(data.getName());
+
+                        description.setText(data.getDescription());
+
+                        address.setText(data.getAddress());
+
+                        city.setText(data.getCity());
+
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+
 
     }
 }

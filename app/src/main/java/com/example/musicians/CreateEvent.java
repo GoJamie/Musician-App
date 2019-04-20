@@ -66,7 +66,8 @@ public class CreateEvent extends AppCompatActivity {
 
         final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-/*
+        final User creator = new User();
+
         DocumentReference docRef = db.collection("users").document(uid);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -74,10 +75,7 @@ public class CreateEvent extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        Map<String, Object> a  = document.getData();
-
-                        username = a.get("date").toString();
-
+                        User creator = document.toObject(User.class);
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
                         Log.d(TAG, "No such document");
@@ -87,7 +85,7 @@ public class CreateEvent extends AppCompatActivity {
                 }
             }
         });
-*/
+
 
         mDisplayDate = (TextView) findViewById(R.id.tvDate1);
         CreateButton = (Button) findViewById(R.id.create_event_button);
@@ -136,9 +134,10 @@ public class CreateEvent extends AppCompatActivity {
 
                         String time_ = mDisplayDate.getText().toString();
 
+                        List<User> participants = new ArrayList<User>();
+                        participants.add(creator);
                         List<Message> messagelist = new ArrayList<Message>();
-
-                        Event create_event = new Event(name_, description_, city_, address_, time_, 1, uid, messagelist);
+                        Event create_event = new Event(name_, description_, city_, address_, time_, participants, creator, messagelist);
 
                         db.collection("events").add(create_event)
                                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

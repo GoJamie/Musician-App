@@ -1,20 +1,21 @@
 package com.example.musicians;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class Event {//extends EventList {
     private String name;
     private String time;
     private String description;
-    private int participants;
-    private String owner;
+    private List<User> participants;
+    private User owner;
     private String city;
     private String address;
     private List<Message> messageList;
 
     public Event() {}
 
-    public Event(String name, String description, String city, String address, String time, int participants, String owner, List<Message> messageList) {
+    public Event(String name, String description, String city, String address, String time, List<User> participants, User owner, List<Message> messageList) {
         this.name = name; // The name of the event
         this.city = city; // The city of the event
         this.address = address; // The address of the event
@@ -37,11 +38,11 @@ public class Event {//extends EventList {
         return time;
     }
 
-    public int getParticipants() {
+    public List<User> getParticipants() {
         return participants;
     }
 
-    public String getOwner() {
+    public User getOwner() {
         return owner;
     }
 
