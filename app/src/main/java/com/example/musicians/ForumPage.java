@@ -1,6 +1,5 @@
 package com.example.musicians;
 
-import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -14,10 +13,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-import java.io.ObjectStreamException;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 // https://guides.codepath.com/android/Populating-a-ListView-with-a-CursorAdapter
 
@@ -46,12 +42,6 @@ public class ForumPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.forum_page);
 
-
-        //TodoDatabaseHandler is a SQLiteOpenHelper class connecting to SQLite
-        //TodoDatabaseHandler handler = new TodoDatabaseHandler(this);
-        // Get access to the underlying writeable database
-        //SQLiteDatabase db = handler.getWritableDatabase();
-        //Query for items from the database and get a cursor back
         // TODO need to figure out how to point to a particular event's message database.
 
         final MatrixCursor MessageCursor = new MatrixCursor(new String[] {"username","message"});

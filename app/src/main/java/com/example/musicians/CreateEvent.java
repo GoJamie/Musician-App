@@ -64,8 +64,9 @@ public class CreateEvent extends AppCompatActivity {
 
         city = (TextInputEditText)findViewById(R.id.text_input_city);
 
-        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+/*
         DocumentReference docRef = db.collection("users").document(uid);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -86,6 +87,7 @@ public class CreateEvent extends AppCompatActivity {
                 }
             }
         });
+*/
 
         mDisplayDate = (TextView) findViewById(R.id.tvDate1);
         CreateButton = (Button) findViewById(R.id.create_event_button);
@@ -136,7 +138,7 @@ public class CreateEvent extends AppCompatActivity {
 
                         List<Message> messagelist = new ArrayList<Message>();
 
-                        Event create_event = new Event(name_, description_, city_, address_, time_, 1, username, messagelist);
+                        Event create_event = new Event(name_, description_, city_, address_, time_, 1, uid, messagelist);
 
                         db.collection("events").add(create_event)
                                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

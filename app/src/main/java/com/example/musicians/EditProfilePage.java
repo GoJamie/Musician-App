@@ -58,7 +58,7 @@ public class EditProfilePage extends AppCompatActivity {
         city   = (EditText)findViewById(R.id.city_profile);
 
 
-        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
 
         DocumentReference docRef = db.collection("users").document(uid);
@@ -143,19 +143,12 @@ public class EditProfilePage extends AppCompatActivity {
                         
                         String date = mDisplayDate.getText().toString();
 
-                        Map<String, Object> edit_profile = new HashMap<>();
-                        edit_profile.put("firstname", firstname_);
-                        edit_profile.put("lastname", lastname_);
-                        edit_profile.put("city", city_);
-                        edit_profile.put("email", email_);
-                        edit_profile.put("aboutMe", about_me_);
-                        edit_profile.put("date", date);
-
-
-
                         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+                        User create_user = new User(firstname_, lastname_, mobile_, city_, email_, about_me_, date, uid);
+
                         db.collection("users").document(uid)
-                                .set(edit_profile)
+                                .set(create_user)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
