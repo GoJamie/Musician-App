@@ -34,6 +34,8 @@ public class EventList extends AppCompatActivity {
     private static final String TAG = "EventList";
     Context context;
     private List<Event> events = new ArrayList<>();;
+
+    private List<String> event_uids = new ArrayList<String>();;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -52,6 +54,7 @@ public class EventList extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
+                                event_uids.add(document.getId());
                                 Event data = document.toObject(Event.class);
                                 events.add(data);
                             }
@@ -65,8 +68,11 @@ public class EventList extends AppCompatActivity {
         event_recycler.addOnItemTouchListener(
                 new EventRecyclerItemClickListener(context, event_recycler ,new EventRecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
-                        //
-                        startActivity(new Intent(EventList.this, Dashboard.class));
+                        String current_uid = event_uids.get(position);
+                        Intent i=new Intent(EventList.this,EventPage.class);
+                        i.putExtra("event_uid", current_uid); // there are many different types of data you can package
+                        startActivity(i);
+
                     }
 
                 })
