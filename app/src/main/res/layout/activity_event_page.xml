@@ -37,7 +37,7 @@
             app:errorEnabled="true">
 
             <TextView
-                android:id="@+id/event_name"
+                android:id="@+id/event_page_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Event Name"
@@ -55,7 +55,7 @@
 
             <TextView
 
-                android:id="@+id/event_description"
+                android:id="@+id/event_page_description"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:hint="Description"
@@ -72,7 +72,7 @@
             app:errorEnabled="true">
 
             <TextView
-                android:id="@+id/event_address"
+                android:id="@+id/event_page_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Address"
@@ -89,7 +89,7 @@
 
             <TextView
 
-                android:id="@+id/event_location"
+                android:id="@+id/event_page_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="City"
@@ -100,7 +100,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <TextView
-            android:id="@+id/event_date"
+            android:id="@+id/event_page_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -111,7 +111,7 @@
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/event_join"
+            android:id="@+id/event_page_join"
             android:layout_width="215dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
