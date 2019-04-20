@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -92,8 +93,11 @@ public class TestUI extends BaseActivity implements
     @Override
     public void onStart() {
         super.onStart();
-        //log out in each start
-        signOut();
+        Boolean status= getIntent().getBooleanExtra("logout", false);
+        if(status) {
+            this.revokeAccess();
+        }
+
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
@@ -140,7 +144,7 @@ public class TestUI extends BaseActivity implements
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+
                             String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                             // Create a reference to the cities collection
                             CollectionReference citiesRef = db.collection("users");
@@ -223,6 +227,11 @@ public class TestUI extends BaseActivity implements
     }
 
     private void updateUI(FirebaseUser user) {
+        if (user != null) {
+
+            startActivity(new Intent(TestUI.this,  Dashboard.class));
+
+        }
         hideProgressDialog();
 
     }

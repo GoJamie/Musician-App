@@ -8,6 +8,6 @@ public class SideNav extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.side_nav);
+        setContentView(R.layout.activity_profile_page);
     }
 }

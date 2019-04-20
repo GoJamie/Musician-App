@@ -13,3 +13,5 @@
 .externalNativeBuild
 /.idea
 *.properties
+*.properties
+local.properties

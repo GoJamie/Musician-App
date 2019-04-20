@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,8 +23,10 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class CreateEvent extends AppCompatActivity {
@@ -36,13 +39,13 @@ public class CreateEvent extends AppCompatActivity {
 
     private Button CreateButton;
 
-    private EditText name;
+    private TextInputEditText name;
 
-    private EditText description;
+    private TextInputEditText description;
 
-    private EditText address;
+    private TextInputEditText address;
 
-    private EditText city;
+    private TextInputEditText city;
 
     private String username;
 
@@ -53,16 +56,17 @@ public class CreateEvent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
 
-        name   = (EditText)findViewById(R.id.text_input_eventname);
+        name   = (TextInputEditText)findViewById(R.id.text_input_eventname);
 
-        description   = (EditText)findViewById(R.id.text_input_description);
+        description   = (TextInputEditText)findViewById(R.id.text_input_description);
 
-        address   = (EditText)findViewById(R.id.text_input_address);
+        address   = (TextInputEditText)findViewById(R.id.text_input_address);
 
-        city = (EditText)findViewById(R.id.text_input_city);
+        city = (TextInputEditText)findViewById(R.id.text_input_city);
 
-        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+/*
         DocumentReference docRef = db.collection("users").document(uid);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -83,6 +87,7 @@ public class CreateEvent extends AppCompatActivity {
                 }
             }
         });
+*/
 
         mDisplayDate = (TextView) findViewById(R.id.tvDate1);
         CreateButton = (Button) findViewById(R.id.create_event_button);
@@ -131,14 +136,10 @@ public class CreateEvent extends AppCompatActivity {
 
                         String time_ = mDisplayDate.getText().toString();
 
-                        Map<String, Object> create_event = new HashMap<>();
-                        create_event.put("name", name_);
-                        create_event.put("description", description_);
-                        create_event.put("city", city_);
-                        create_event.put("address", address_);
-                        create_event.put("time", time_);
-                        create_event.put("user", username);
-                        create_event.put("participants", 1);
+                        List<Message> messagelist = new ArrayList<Message>();
+
+                        Event create_event = new Event(name_, description_, city_, address_, time_, 1, uid, messagelist);
+
                         db.collection("events").add(create_event)
                                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                     @Override
