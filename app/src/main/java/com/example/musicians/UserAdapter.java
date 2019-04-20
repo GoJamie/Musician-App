@@ -7,8 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
+
 
     public static class UserViewHolder extends RecyclerView.ViewHolder {
 
@@ -19,10 +22,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         UserViewHolder(View userView) {
             super(userView);
             user_card = userView.findViewById(R.id.user_card);
-            UserName = userView.findViewById(R.id.user_name);
+            UserName = userView.findViewById(R.id.displayed_username);
 
         }
     }
+    List<User> Users;
 
     UserAdapter(List<User> Users){
         this.Users = Users;
@@ -43,7 +47,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     @Override
     public void onBindViewHolder(UserViewHolder UserViewHolder, int i) {
         // TODO: Add correct user info
-        UserViewHolder.UserName.setText(Users.get(i).getName());
+        UserViewHolder.UserName.setText(Users.get(i).getFirstname());
 
     }
 

@@ -1,6 +1,6 @@
 package com.example.musicians;
 
-public class User {
+public class User extends UserList{
     String firstname;
     String lastname;
     String mobile;
@@ -22,6 +22,14 @@ public class User {
         this.birthday = birthday;
         this.uid = uid;
     }
+    public String  getFirstname() {
+        return firstname;
+    }
 
+    public String  getLastname() {
+        return lastname;
+    }
 }
+
+
 
