@@ -7,6 +7,7 @@
     android:orientation="horizontal"
     tools:context=".CreateEvent"
     android:background="@drawable/background">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -105,10 +106,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:hint="Event Date"
             android:textAlignment="center"
             android:textColorHint="#FFFCFAFA"
-            android:layout_marginTop="10dp"
             android:textSize="30sp" />
 <LinearLayout
     android:layout_width="match_parent"
@@ -141,7 +142,7 @@
 
 
         <Button
-            android:id="@+id/event_show_form"
+            android:id="@+id/event_show_users"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"

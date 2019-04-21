@@ -80,7 +80,7 @@ public class EventList extends AppCompatActivity {
 
     }
 
-    private void initializeData(){
+/*    private void initializeData(){
 
         String date = "2018/06/24";
         List<Message> messagelist = new ArrayList<Message>();
@@ -119,7 +119,7 @@ public class EventList extends AppCompatActivity {
                         Log.w(TAG, "Error adding document", e);
                     }
                 });
-     }
+     }*/
 
     private void initializeAdapter(){
         RecyclerView.Adapter event_adapter = new EventAdapter(events);

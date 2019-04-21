@@ -28,6 +28,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
+
     </LinearLayout>
 
 
@@ -53,17 +54,21 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_alignParentBottom="true">
 
-        <EditText
-            android:id="@+id/edit_message"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
-            android:hint="Write your message here"
-            android:inputType="textPersonName"
-            android:textColor="@color/white"/>
+            android:layout_marginTop="30dp"
+            android:textColorHint="@color/white"
+            app:errorEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edit_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Message"
+                android:inputType="text" />
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/send_message"

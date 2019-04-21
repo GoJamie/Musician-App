@@ -1,6 +1,6 @@
 package com.example.musicians;
 
-public class User extends UserList{
+public class User {//extends UserList{
     String firstname;
     String lastname;
     String mobile;

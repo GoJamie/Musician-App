@@ -1,5 +1,6 @@
 package com.example.musicians;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -7,7 +8,9 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -23,7 +26,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
-import java.util.Map;
 
 public class EditProfilePage extends AppCompatActivity {
     private static final String TAG = "EditProfilePage";
@@ -67,18 +69,22 @@ public class EditProfilePage extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        Map<String, Object> a  = document.getData();
-                        firstName.setText(a.get("firstname").toString());
 
-                        lastName.setText(a.get("lastname").toString());
+                        User data = document.toObject(User.class);
 
-                        city.setText(a.get("city").toString());
+                        firstName.setText(data.firstname);
 
-                        email.setText(a.get("email").toString());
+                        lastName.setText(data.lastname);
 
-                        aboutMe.setText(a.get("aboutMe").toString());
+                        city.setText(data.city);
 
-                        mDisplayDate.setText(a.get("date").toString());
+                        email.setText(data.email);
+
+                        aboutMe.setText(data.aboutme);
+
+                        mobile.setText(data.mobile);
+
+                        mDisplayDate.setText(data.birthday);
 
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
@@ -152,6 +158,7 @@ public class EditProfilePage extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         Log.d(TAG, "DocumentSnapshot successfully written!");
+                                        showCustomDialog();
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
@@ -163,5 +170,24 @@ public class EditProfilePage extends AppCompatActivity {
                     }
                 });
 
+    }
+
+    private void showCustomDialog() {
+        //before inflating the custom alert dialog layout, we will get the current activity viewgroup
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+
+        //then we will inflate the custom alert dialog xml that we created
+        View dialogView = LayoutInflater.from(this).inflate(R.layout.my_dialog, viewGroup, false);
+
+
+        //Now we need an AlertDialog.Builder object
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        //setting the view of the builder to our custom view that we already inflated
+        builder.setView(dialogView);
+
+        //finally creating the alert dialog and displaying it
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

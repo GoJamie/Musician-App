@@ -54,15 +54,18 @@ public class ProfilePage extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        Map<String, Object> a  = document.getData();
-                        name.setText(a.get("firstname").toString() +" "+ a.get("lastname").toString());
 
-                        location.setText(a.get("city").toString());
+                        User data = document.toObject(User.class);
 
-                        email.setText(a.get("email").toString());
+                        name.setText(data.firstname+" "+data.lastname);
 
-                        aboutMe.setText(a.get("aboutMe").toString());
+                        location.setText(data.city);
 
+                        email.setText(data.email);
+
+                        aboutMe.setText(data.aboutme);
+
+                        mobile.setText(data.mobile);
 
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
@@ -73,7 +76,6 @@ public class ProfilePage extends AppCompatActivity {
                 }
             }
         });
-
 
 
         edit.setOnClickListener(new View.OnClickListener() {
