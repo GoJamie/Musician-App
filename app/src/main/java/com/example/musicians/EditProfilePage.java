@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +28,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class EditProfilePage extends AppCompatActivity {
     private static final String TAG = "EditProfilePage";
@@ -39,6 +42,9 @@ public class EditProfilePage extends AppCompatActivity {
     private EditText mobile;
     private EditText aboutMe;
     private EditText city;
+
+    private TextView dialogtext;
+
 
     public FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -58,6 +64,7 @@ public class EditProfilePage extends AppCompatActivity {
         aboutMe   = (EditText)findViewById(R.id.aboutMe_profile);
 
         city   = (EditText)findViewById(R.id.city_profile);
+
 
 
         final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -159,7 +166,10 @@ public class EditProfilePage extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         Log.d(TAG, "DocumentSnapshot successfully written!");
-                                        showCustomDialog();
+//                                        showCustomDialog("The profile info was saved");
+                                        Helper.showCustomDialog("info was saved", EditProfilePage.this, Dashboard.class);
+
+
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
@@ -173,12 +183,15 @@ public class EditProfilePage extends AppCompatActivity {
 
     }
 
-    private void showCustomDialog() {
+    private void showCustomDialog(String text) {
         //before inflating the custom alert dialog layout, we will get the current activity viewgroup
         ViewGroup viewGroup = findViewById(android.R.id.content);
+        dialogtext = (TextView) findViewById(R.id.dialog_text);
+
 
         //then we will inflate the custom alert dialog xml that we created
         View dialogView = LayoutInflater.from(this).inflate(R.layout.my_dialog, viewGroup, false);
+
 
 
         //Now we need an AlertDialog.Builder object
@@ -186,9 +199,22 @@ public class EditProfilePage extends AppCompatActivity {
 
         //setting the view of the builder to our custom view that we already inflated
         builder.setView(dialogView);
-
         //finally creating the alert dialog and displaying it
-        AlertDialog alertDialog = builder.create();
+        final  AlertDialog alertDialog = builder.create();
         alertDialog.show();
+
+        TextView editText = (TextView) dialogView.findViewById(R.id.dialog_text);
+        editText.setText(text);
+
+        final Timer timer2 = new Timer();
+        timer2.schedule(new TimerTask() {
+            public void run() {
+                alertDialog.dismiss();
+                timer2.cancel(); //this will cancel the timer of the system
+            }
+        }, 2000);
+
+
     }
+
 }
