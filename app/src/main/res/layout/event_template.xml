@@ -5,11 +5,17 @@
     android:layout_gravity="center"
     app:cardCornerRadius="4dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/transparent">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/event_card_background">
 
         <TextView
             android:id="@+id/event_name"
