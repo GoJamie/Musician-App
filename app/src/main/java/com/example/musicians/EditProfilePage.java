@@ -70,18 +70,22 @@ public class EditProfilePage extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        Map<String, Object> a  = document.getData();
-                        firstName.setText(a.get("firstname").toString());
 
-                        lastName.setText(a.get("lastname").toString());
+                        User data = document.toObject(User.class);
 
-                        city.setText(a.get("city").toString());
+                        firstName.setText(data.firstname);
 
-                        email.setText(a.get("email").toString());
+                        lastName.setText(data.lastname);
 
-                        aboutMe.setText(a.get("aboutMe").toString());
+                        city.setText(data.city);
 
-                        mDisplayDate.setText(a.get("date").toString());
+                        email.setText(data.email);
+
+                        aboutMe.setText(data.aboutme);
+
+                        mobile.setText(data.mobile);
+
+                        mDisplayDate.setText(data.birthday);
 
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {

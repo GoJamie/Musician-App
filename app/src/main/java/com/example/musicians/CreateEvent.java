@@ -51,6 +51,7 @@ public class CreateEvent extends AppCompatActivity {
 
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
+    private User creator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,8 +67,6 @@ public class CreateEvent extends AppCompatActivity {
 
         final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        final User creator = new User();
-
         DocumentReference docRef = db.collection("users").document(uid);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -75,7 +74,7 @@ public class CreateEvent extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        User creator = document.toObject(User.class);
+                        creator = document.toObject(User.class);
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
                         Log.d(TAG, "No such document");
