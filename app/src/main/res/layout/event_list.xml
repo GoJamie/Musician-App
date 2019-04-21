@@ -16,7 +16,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
         android:text="Events"
-        android:textAlignment="center"
+        android:gravity="center"
         android:textColor="@color/white"
         android:background="@color/orange"
         android:textSize="36sp"
