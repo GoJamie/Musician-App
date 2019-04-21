@@ -26,7 +26,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
-import java.util.Map;
 
 public class EditProfilePage extends AppCompatActivity {
     private static final String TAG = "EditProfilePage";
