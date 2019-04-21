@@ -38,7 +38,7 @@
             android:textColorHint="@color/white"
             app:errorEnabled="true">
 
-            <TextView
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/event_page_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,6 +48,7 @@
                 android:textSize="20dp"
                 android:textColorHint="#FFFCFAFA" />
 
+
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -56,7 +57,7 @@
             android:textColorHint="@color/white"
             app:errorEnabled="true">
 
-            <TextView
+            <android.support.design.widget.TextInputEditText
 
                 android:id="@+id/event_page_description"
                 android:layout_width="match_parent"
@@ -75,7 +76,7 @@
             android:textColorHint="@color/white"
             app:errorEnabled="true">
 
-            <TextView
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/event_page_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -92,7 +93,7 @@
             android:layout_height="60dp"
             app:errorEnabled="true">
 
-            <TextView
+            <android.support.design.widget.TextInputEditText
 
                 android:id="@+id/event_page_city"
                 android:layout_width="match_parent"
