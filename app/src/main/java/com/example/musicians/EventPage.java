@@ -179,6 +179,15 @@ public class EventPage extends AppCompatActivity {
 
             }
         });
+
+        show_users.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(EventPage.this, UserList.class);
+                i.putExtra("event_uid", event_uid); // there are many different types of data you can package
+                startActivity(i);
+            }
+        });
     }
 }
 

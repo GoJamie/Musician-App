@@ -20,9 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:background="#FFA500"
             android:text="Profile"
             android:textAlignment="center"
@@ -173,10 +173,12 @@
             android:id="@+id/edit_profile_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:background="@color/orange"
-
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
             android:text="Edit Profile"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
             android:textColor="#FFFCFAFA" />
 
     </LinearLayout>

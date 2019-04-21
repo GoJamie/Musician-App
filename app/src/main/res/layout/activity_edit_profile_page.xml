@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="5dp"
+    android:layout_marginTop="0dp"
     android:background="@drawable/background"
     tools:context=".EditProfilePage">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,9 +17,9 @@
             android:id="@+id/edit_profile"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:background="@color/orange"
             android:text="Edit Profile"
             android:textAlignment="center"
@@ -170,8 +170,12 @@
         <Button
             android:id="@+id/save_edit"
             android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
             android:layout_height="wrap_content"
             android:background="@color/orange"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            android:textSize="20dp"
             android:text="Save"
             android:textColor="#FFFCFAFA" />
     </LinearLayout>
