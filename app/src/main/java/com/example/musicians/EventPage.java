@@ -126,6 +126,7 @@ public class EventPage extends AppCompatActivity {
                     Log.d(TAG, "get failed with ", task.getException());
                 }
             }
+
         });
 
 
