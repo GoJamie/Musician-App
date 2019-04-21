@@ -21,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/grey_dim"
         android:padding="16dp">
 
         <TextView
@@ -39,15 +40,6 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-        <Button
-            android:id="@+id/buttonOk"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/button_background"
-            android:text="Ok"
-            android:textColor="@color/colorPrimaryDark" />
 
     </LinearLayout>
 

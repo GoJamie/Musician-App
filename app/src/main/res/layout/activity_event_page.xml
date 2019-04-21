@@ -142,7 +142,7 @@
 
 
         <Button
-            android:id="@+id/event_show_users"
+            android:id="@+id/event_show_forum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
