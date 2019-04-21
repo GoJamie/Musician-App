@@ -113,7 +113,6 @@
         android:id="@+id/event_recycler"
         android:layout_width="match_parent"
         android:layout_height="424dp"
-        android:background="@android:color/transparent"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
