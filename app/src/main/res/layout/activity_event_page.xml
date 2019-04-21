@@ -45,6 +45,7 @@
                 android:layout_marginStart="3dp"
                 android:hint="Event Name"
                 android:inputType="text"
+                android:textSize="20dp"
                 android:textColorHint="#FFFCFAFA" />
 
         </android.support.design.widget.TextInputLayout>
@@ -63,6 +64,7 @@
                 android:layout_marginStart="3dp"
                 android:hint="Description"
                 android:inputType="textMultiLine"
+                android:textSize="20dp"
                 android:textColorHint="#FFFCFAFA" />
 
         </android.support.design.widget.TextInputLayout>
@@ -80,6 +82,7 @@
                 android:layout_marginStart="3dp"
                 android:hint="Address"
                 android:inputType="text"
+                android:textSize="20dp"
                 android:textColorHint="#FFFCFAFA" />
 
         </android.support.design.widget.TextInputLayout>
@@ -97,6 +100,7 @@
                 android:layout_marginStart="3dp"
                 android:hint="City"
                 android:inputType="text"
+                android:textSize="20dp"
                 android:textColorHint="#FFFCFAFA" />
 
         </android.support.design.widget.TextInputLayout>
