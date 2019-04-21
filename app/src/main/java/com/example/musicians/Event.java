@@ -11,7 +11,7 @@ public class Event {//extends EventList {
     private User owner;
     private String city;
     private String address;
-    private List<Message> messageList;
+    private List<Message> messagelist;
 
     public Event() {}
 
@@ -22,7 +22,7 @@ public class Event {//extends EventList {
         this.time = time; // The time of the event
         this.participants = participants; // The number of participants to the event
         this.owner = owner; // The person who has created the event
-        this.messageList = messageList; // The list of message object
+        this.messagelist = messagelist; // The list of message object
         this.description = description;
     }
 
@@ -55,6 +55,6 @@ public class Event {//extends EventList {
     }
 
     public List<Message> getMessageList() {
-        return messageList;
+        return messagelist;
     }
 }
