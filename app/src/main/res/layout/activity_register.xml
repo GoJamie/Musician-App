@@ -8,7 +8,6 @@
     android:orientation="vertical"
     android:layout_marginTop="5dp">
     tools:context=".Register" >
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -19,9 +18,9 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:background="@color/orange"
             android:text="Create New Account"
             android:textAlignment="center"
@@ -163,7 +162,7 @@
             android:hint="What's Your Birthday?"
             android:textAlignment="center"
             android:textColorHint="@color/white"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="50dp"
             android:textSize="30sp" />
     </LinearLayout>
 
@@ -176,8 +175,10 @@
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="50dp"
             android:background="@color/orange"
             android:text="Register"
             android:textColor="#FFFCFAFA" />

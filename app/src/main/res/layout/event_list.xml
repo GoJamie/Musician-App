@@ -6,15 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_dim">
+    android:background="@drawable/background">
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:text="Events"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -45,6 +45,7 @@
             android:layout_marginTop="17dp"
             android:hint="Location: "
             android:inputType="text"
+            android:textColorHint="#FFFCFAFA"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_search" />
@@ -55,6 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="Event Name"
+            android:textColorHint="#FFFCFAFA"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -72,8 +74,8 @@
         android:hint="Event Date"
         android:text="Event Date"
         android:textAlignment="center"
-        android:textColorHint="#FFFCFAFA"
         android:textSize="30sp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
@@ -85,6 +87,7 @@
         android:layout_height="17dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:textColor="@color/white"
         android:layout_marginEnd="34dp"
         android:text="Own Events"
         app:layout_constraintEnd_toStartOf="@+id/tvDate4"
@@ -95,6 +98,7 @@
         android:id="@+id/joined_event_checkbox"
         android:layout_width="160dp"
         android:layout_height="17dp"
+        android:textColor="@color/white"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="34dp"
@@ -109,6 +113,8 @@
         android:id="@+id/event_recycler"
         android:layout_width="match_parent"
         android:layout_height="424dp"
+        android:textColorHint="#FFFCFAFA"
+        
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
