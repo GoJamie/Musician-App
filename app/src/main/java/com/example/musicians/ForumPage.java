@@ -97,12 +97,14 @@ public class ForumPage extends AppCompatActivity {
                 if (snapshot != null && snapshot.exists()) {
                     Event data = snapshot.toObject(Event.class);
                     messagelist = data.getMessageList();
-                    int id = 0;
-                    for ( Message message : messagelist ) {
-                        MessageCursor.newRow()
-                                .add("_id",id++)
-                                .add("username", message.username)
-                                .add("message", message.message);
+                    if (messagelist.isEmpty() == false) {
+                        int id = 0;
+                        for (Message message : messagelist) {
+                            MessageCursor.newRow()
+                                    .add("_id", id++)
+                                    .add("username", message.username)
+                                    .add("message", message.message);
+                        }
                     }
                     Log.d(TAG, "Current data: " + snapshot.getData());
                 } else {
