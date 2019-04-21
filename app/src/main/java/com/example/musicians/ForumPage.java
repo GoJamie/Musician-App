@@ -1,12 +1,20 @@
 package com.example.musicians;
 
 import android.database.MatrixCursor;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -34,18 +42,49 @@ public class ForumPage extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    String event_uid = getIntent().getStringExtra("event_uid");
+    String event_uid;
     private static final String TAG = "ForumPage";
 
+    private Button SendButton;
+
+    private TextInputEditText EditMessage;
+
+    private String username;
+
+    private List<Message> messagelist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.forum_page);
 
+        SendButton = findViewById(R.id.send_message);
+        EditMessage = findViewById(R.id.edit_message);
+
+        event_uid = getIntent().getStringExtra("event_uid");
         // TODO need to figure out how to point to a particular event's message database.
 
         final MatrixCursor MessageCursor = new MatrixCursor(new String[] {"username","message"});
 
+        final String user_uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        DocumentReference UserdocRef = db.collection("users").document(user_uid);
+        UserdocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        User user = document.toObject(User.class);
+                        username = user.getFirstname() + " " + user.getLastname();
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
         final DocumentReference docRef = db.collection("events").document(event_uid);
         docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
@@ -58,7 +97,7 @@ public class ForumPage extends AppCompatActivity {
 
                 if (snapshot != null && snapshot.exists()) {
                     Event data = snapshot.toObject(Event.class);
-                    List<Message> messagelist = data.getMessageList();
+                    messagelist = data.getMessageList();
                     for ( Message message : messagelist ) {
                         MessageCursor.newRow()
                                 .add("username", message.username)
@@ -72,13 +111,22 @@ public class ForumPage extends AppCompatActivity {
         });
 
         // Find ListView to populate
-        ListView messages_list = findViewById(R.id.messages_list);
+        final ListView messages_list = findViewById(R.id.messages_list);
         // Setup cursor adapter using cursor
         MessageCursorAdapter MessageAdapter = new MessageCursorAdapter(this, MessageCursor);
         // Attach cursor adapter to the messages_list
         messages_list.setAdapter(MessageAdapter);
 
-    }
+        SendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String message = EditMessage.getText().toString();
+                messagelist.add(new Message(username, message));
+                db.collection("events").document(event_uid).update("messagelist", messagelist);
+            }
+        });
 
+
+    }
 
 }

@@ -47,8 +47,6 @@ public class CreateEvent extends AppCompatActivity {
 
     private TextInputEditText city;
 
-    private String username;
-
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
     private User creator;

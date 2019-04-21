@@ -7,6 +7,7 @@
     android:orientation="horizontal"
     tools:context=".CreateEvent"
     android:background="@drawable/background">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -42,8 +43,8 @@
                 android:layout_height="wrap_content"
                 android:hint="Event Name"
 
-                android:textColorHint="#FFFCFAFA"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColorHint="#FFFCFAFA" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -60,8 +61,8 @@
                 android:layout_height="120dp"
                 android:hint="Description"
 
-                android:textColorHint="#FFFCFAFA"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:textColorHint="#FFFCFAFA" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -77,8 +78,8 @@
                 android:layout_height="wrap_content"
                 android:hint="Address"
 
-                android:textColorHint="#FFFCFAFA"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColorHint="#FFFCFAFA" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -104,11 +105,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:hint="Event Date"
             android:textAlignment="center"
             android:textColorHint="#FFFCFAFA"
-            android:layout_marginTop="10dp"
             android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/event_show_forum"
+            android:layout_width="208dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="#FFA500"
+            android:text="Formpage"
+            android:textColor="#FFFCFAFA" />
 
         <Button
             android:id="@+id/event_page_join"
@@ -126,15 +136,6 @@
             android:layout_marginTop="35dp"
             android:background="#FFA500"
             android:text="Joined users"
-            android:textColor="#FFFCFAFA" />
-
-        <Button
-            android:id="@+id/event_show_forum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:background="#FFA500"
-            android:text="Formpage"
             android:textColor="#FFFCFAFA" />
 
 
