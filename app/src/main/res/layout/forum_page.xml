@@ -17,9 +17,9 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:background="#FFA500"
             android:text="Forum page"
             android:textAlignment="center"
@@ -75,8 +75,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
             android:background="#FFA500"
             android:text="Send"
+            android:textSize="20dp"
             android:textColor="@color/white" />
     </LinearLayout>
 

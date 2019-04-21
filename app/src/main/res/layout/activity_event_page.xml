@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="horizontal"
-    tools:context=".CreateEvent"
-    android:background="@drawable/background">
+    tools:context=".CreateEvent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,8 +18,9 @@
             android:id="@+id/event_id"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:background="#FFA500"
             android:text="Event"
             android:textAlignment="center"
@@ -41,8 +42,8 @@
                 android:id="@+id/event_page_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
                 android:hint="Event Name"
-
                 android:inputType="text"
                 android:textColorHint="#FFFCFAFA" />
 
@@ -59,8 +60,8 @@
                 android:id="@+id/event_page_description"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
+                android:layout_marginStart="3dp"
                 android:hint="Description"
-
                 android:inputType="textMultiLine"
                 android:textColorHint="#FFFCFAFA" />
 
@@ -76,8 +77,8 @@
                 android:id="@+id/event_page_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
                 android:hint="Address"
-
                 android:inputType="text"
                 android:textColorHint="#FFFCFAFA" />
 
@@ -93,8 +94,8 @@
                 android:id="@+id/event_page_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
                 android:hint="City"
-
                 android:inputType="text"
                 android:textColorHint="#FFFCFAFA" />
 
@@ -111,48 +112,49 @@
             android:textColorHint="#FFFCFAFA"
             android:textSize="30sp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/event_page_join"
+                android:layout_width="194dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:background="#FFA500"
+                android:text="Join"
+                android:textColor="#FFFCFAFA"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/event_show_users"
+                android:layout_width="194dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:background="#FFA500"
+                android:text="Joined users"
+                android:textColor="#FFFCFAFA"
+                android:textSize="20dp" />
+        </LinearLayout>
+
         <Button
             android:id="@+id/event_show_forum"
-            android:layout_width="208dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:background="#FFA500"
-            android:text="Formpage"
-            android:textColor="#FFFCFAFA" />
-
-        <Button
-            android:id="@+id/event_page_join"
-            android:layout_width="215dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:background="#FFA500"
-            android:text="Join"
-            android:textColor="#FFFCFAFA" />
-
-        <Button
-            android:id="@+id/event_show_users"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="50dp"
             android:background="#FFA500"
-            android:text="Joined users"
-            android:textColor="#FFFCFAFA" />
+            android:text="Forum page"
+            android:textColor="#FFFCFAFA"
+            android:textSize="20dp" />
 
 
     </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </RelativeLayout>
