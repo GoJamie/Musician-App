@@ -44,7 +44,6 @@ public class UserList extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-
                         Event data = document.toObject(Event.class);
                         users = data.getParticipants();
                         initializeAdapter();

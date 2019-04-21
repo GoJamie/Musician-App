@@ -62,7 +62,7 @@ public class ForumPage extends AppCompatActivity {
         event_uid = getIntent().getStringExtra("event_uid");
         // TODO need to figure out how to point to a particular event's message database.
 
-        final MatrixCursor MessageCursor = new MatrixCursor(new String[] {"username","message"});
+        final MatrixCursor MessageCursor = new MatrixCursor(new String[] {"_id", "username","message"});
 
         final String user_uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -97,8 +97,10 @@ public class ForumPage extends AppCompatActivity {
                 if (snapshot != null && snapshot.exists()) {
                     Event data = snapshot.toObject(Event.class);
                     messagelist = data.getMessageList();
+                    int id = 0;
                     for ( Message message : messagelist ) {
                         MessageCursor.newRow()
+                                .add("_id",id++)
                                 .add("username", message.username)
                                 .add("message", message.message);
                     }
