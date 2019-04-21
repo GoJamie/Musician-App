@@ -51,6 +51,8 @@ public class ForumPage extends AppCompatActivity {
     private String username;
 
     private List<Message> messagelist;
+
+    private MatrixCursor MessageCursor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,10 +64,10 @@ public class ForumPage extends AppCompatActivity {
         event_uid = getIntent().getStringExtra("event_uid");
         // TODO need to figure out how to point to a particular event's message database.
 
-        final MatrixCursor MessageCursor = new MatrixCursor(new String[] {"_id", "username","message"});
 
         final String user_uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+        final ListView messages_list = findViewById(R.id.messages_list);
         DocumentReference UserdocRef = db.collection("users").document(user_uid);
         UserdocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -84,11 +86,14 @@ public class ForumPage extends AppCompatActivity {
                 }
             }
         });
+
         final DocumentReference docRef = db.collection("events").document(event_uid);
         docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot snapshot,
                                 @Nullable FirebaseFirestoreException e) {
+                MessageCursor= new MatrixCursor(new String[] {"_id", "username","message"});
+
                 if (e != null) {
                     Log.w(TAG, "Listen failed.", e);
                     return;
@@ -106,6 +111,10 @@ public class ForumPage extends AppCompatActivity {
                                     .add("message", message.message);
                         }
                     }
+                    MessageCursorAdapter MessageAdapter = new MessageCursorAdapter(ForumPage.this, MessageCursor);
+                    // Attach cursor adapter to the messages_list
+                    messages_list.setAdapter(MessageAdapter);
+
                     Log.d(TAG, "Current data: " + snapshot.getData());
                 } else {
                     Log.d(TAG, "Current data: null");
@@ -114,18 +123,13 @@ public class ForumPage extends AppCompatActivity {
         });
 
         // Find ListView to populate
-        final ListView messages_list = findViewById(R.id.messages_list);
         // Setup cursor adapter using cursor
-        MessageCursorAdapter MessageAdapter = new MessageCursorAdapter(this, MessageCursor);
-        // Attach cursor adapter to the messages_list
-        messages_list.setAdapter(MessageAdapter);
-
         SendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String message = EditMessage.getText().toString();
                 messagelist.add(new Message(username, message));
-                db.collection("events").document(event_uid).update("messagelist", messagelist);
+                db.collection("events").document(event_uid).update("messageList", messagelist);
             }
         });
 

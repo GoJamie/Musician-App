@@ -129,6 +129,7 @@ public class EventPage extends AppCompatActivity {
 
                         city.setText(data.getCity());
 
+
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
                         Log.d(TAG, "No such document");

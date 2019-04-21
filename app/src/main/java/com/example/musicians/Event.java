@@ -11,18 +11,18 @@ public class Event {//extends EventList {
     private User owner;
     private String city;
     private String address;
-    private List<Message> messagelist;
+    private List<Message> messageList;
 
     public Event() {}
 
-    public Event(String name, String description, String city, String address, String time, List<User> participants, User owner, List<Message> messageList) {
+    public Event(String name, String description, String city, String address, String time, List<User> participants, User owner, List<Message> messagelist) {
         this.name = name; // The name of the event
         this.city = city; // The city of the event
         this.address = address; // The address of the event
         this.time = time; // The time of the event
         this.participants = participants; // The number of participants to the event
         this.owner = owner; // The person who has created the event
-        this.messagelist = messagelist; // The list of message object
+        this.messageList = messagelist; // The list of message object
         this.description = description;
     }
 
@@ -55,6 +55,6 @@ public class Event {//extends EventList {
     }
 
     public List<Message> getMessageList() {
-        return messagelist;
+        return messageList;
     }
 }
