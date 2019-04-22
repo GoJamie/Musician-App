@@ -39,6 +39,7 @@ dependencies {
 
     // Firebase firesotre
     implementation 'com.google.firebase:firebase-firestore:18.2.0'
+    compile 'com.google.firebase:firebase-storage:16.1.0'
 }
 
 com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
