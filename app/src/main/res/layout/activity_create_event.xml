@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:alpha="1"
         android:orientation="vertical">
 
 
@@ -20,9 +21,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:background="#FFA500"
+        android:background="@drawable/shape_fancy_button"
         android:text="Create New Event"
         android:textAlignment="center"
+        android:gravity="center"
         android:textColor="#FFFCFAFA"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +112,7 @@
             android:layout_marginTop="35dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
-            android:background="#FFA500"
+            android:background="@drawable/shape_fancy_button"
             android:text="Create"
             android:textSize="20dp"
             android:textColor="#FFFCFAFA" />
