@@ -128,7 +128,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="5dp"
-                android:background="#FFA500"
+                android:background="@drawable/shape_fancy_button"
                 android:text="Join"
                 android:textColor="#FFFCFAFA"
                 android:textSize="20dp" />
@@ -140,7 +140,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="5dp"
-                android:background="#FFA500"
+                android:background="@drawable/shape_fancy_button"
                 android:text="Joined users"
                 android:textColor="#FFFCFAFA"
                 android:textSize="20dp" />
@@ -153,7 +153,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="50dp"
-            android:background="#FFA500"
+            android:background="@drawable/shape_fancy_button"
             android:text="Forum page"
             android:textColor="#FFFCFAFA"
             android:textSize="20dp" />

@@ -110,7 +110,7 @@
             android:layout_marginTop="35dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
-            android:background="#FFA500"
+            android:background="@drawable/shape_fancy_button"
             android:text="Create"
             android:textSize="20dp"
             android:textColor="#FFFCFAFA" />
