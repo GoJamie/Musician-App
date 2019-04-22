@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserList extends AppCompatActivity {
@@ -25,6 +27,8 @@ public class UserList extends AppCompatActivity {
     Context context;
     private List<User> users;
     private String event_uid;
+
+    private List<String> users_uids = new ArrayList<String>();;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -61,7 +65,11 @@ public class UserList extends AppCompatActivity {
                 new UserRecyclerItemClickListener(context, user_recycler ,new UserRecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
                         //
-                        startActivity(new Intent(UserList.this, Dashboard.class));
+                        String current_uid = users.get(position).uid;
+                        Intent i=new Intent(UserList.this,ProfilePage.class);
+                        i.putExtra("event_uid", current_uid); // there are many different types of data you can package
+                        startActivity(i);
+
                     }
 
                 })
