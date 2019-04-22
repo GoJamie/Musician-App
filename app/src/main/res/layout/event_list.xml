@@ -64,22 +64,7 @@
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/tvDate4"
-        android:layout_width="193dp"
-        android:layout_height="43dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="460dp"
-        android:hint="Event Date"
-        android:text="Event Date"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
 
 
     <CheckBox
