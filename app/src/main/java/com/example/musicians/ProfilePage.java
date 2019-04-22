@@ -43,9 +43,50 @@ public class ProfilePage extends AppCompatActivity {
         location = (TextView) findViewById(R.id.profile_location);
         aboutMe = (TextView) findViewById(R.id.profile_about);
 
+        edit.setVisibility(View.VISIBLE);
+
 
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+
+        final String user_uid= getIntent().getStringExtra("user_uid");
+        if(user_uid != null){
+            if(!user_uid.equals(uid)) {
+
+
+                DocumentReference newuser = db.collection("users").document(user_uid);
+                newuser.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+
+                                User data = document.toObject(User.class);
+
+                                name.setText(data.firstname+" "+data.lastname);
+
+                                location.setText(data.city);
+
+                                email.setText(data.email);
+
+                                aboutMe.setText(data.aboutme);
+
+                                mobile.setText(data.mobile);
+
+                                Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                            } else {
+                                Log.d(TAG, "No such document");
+                            }
+                        } else {
+                            Log.d(TAG, "get failed with ", task.getException());
+                        }
+                    }
+                });
+
+                edit.setVisibility(View.INVISIBLE);
+            }
+        }
 
         DocumentReference docRef = db.collection("users").document(uid);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -78,12 +119,6 @@ public class ProfilePage extends AppCompatActivity {
         });
 
 
-        final String user_uid= getIntent().getStringExtra("user_uid");
-        if(user_uid != null){
-            if(user_uid == uid) {
-                edit.setVisibility(View.INVISIBLE);
-            }
-        }
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
