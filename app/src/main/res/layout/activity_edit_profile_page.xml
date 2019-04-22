@@ -130,6 +130,7 @@
                 android:layout_height="130dp"
                 android:hint="About Me"
                 android:inputType="textMultiLine" />
+
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 

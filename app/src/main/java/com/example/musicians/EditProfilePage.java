@@ -2,8 +2,10 @@ package com.example.musicians;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +17,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -25,8 +28,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+
 import java.util.Calendar;
-import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -41,11 +44,12 @@ public class EditProfilePage extends AppCompatActivity {
     private EditText mobile;
     private EditText aboutMe;
     private EditText city;
-
     private TextView dialogtext;
 
-
     public FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
+    //Firebase
 
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     @Override
@@ -135,6 +139,7 @@ public class EditProfilePage extends AppCompatActivity {
 
             }
         };
+
 
         saveButton.setOnClickListener(
                 new View.OnClickListener()

@@ -16,3 +16,8 @@
 *.properties
 local.properties
 *.properties
+*.gradle
+*.properties
+*.properties
+*.gradle
+*.properties
