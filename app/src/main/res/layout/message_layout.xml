@@ -18,6 +18,7 @@
         android:id="@+id/message_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners"
         android:text="user: "
         android:textColor="@color/white"
         />
