@@ -76,7 +76,7 @@ public class ForumPage extends AppCompatActivity {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         User user = document.toObject(User.class);
-                        username = user.getFirstname() + " " + user.getLastname();
+                        username = user.getFirstname() + " " + user.getLastname() + ": ";
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
                         Log.d(TAG, "No such document");
