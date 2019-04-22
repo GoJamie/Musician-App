@@ -66,24 +66,22 @@ public class ProfilePage extends AppCompatActivity {
                 && data != null && data.getData() != null )
         {
             filePath = data.getData();
-            final long ONE_MEGABYTE = 4096 * 4096;
-            islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-                @Override
-                public void onSuccess(byte[] bytes) {
-                    Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                    ImageView image = (ImageView) findViewById(R.id.profile_image);
-
-                    image.setImageBitmap(Bitmap.createScaledBitmap(bmp, image.getWidth(),
-                            image.getHeight(), false));
-                    // Data for "images/island.jpg" is returns, use this as needed
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception exception) {
-                    // Handle any errors
-                }
-            });
         }
+        final long ONE_MEGABYTE = 4096 * 4096;
+        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                ImageView image = (ImageView) findViewById(R.id.profile_image);
+
+                image.setImageBitmap(Bitmap.createScaledBitmap(bmp, image.getWidth(),
+                        image.getHeight(), false));
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+            }
+        });
     }
 
     private void uploadImage() {
@@ -144,32 +142,31 @@ public class ProfilePage extends AppCompatActivity {
 
         uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        storageRef = storage.getReference();
-
-        islandRef = storageRef.child("images/"+ uid);
-
-        final long ONE_MEGABYTE = 4096 * 4096;
-        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-            @Override
-            public void onSuccess(byte[] bytes) {
-                Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                ImageView image = (ImageView) findViewById(R.id.profile_image);
-
-                image.setImageBitmap(Bitmap.createScaledBitmap(bmp, image.getWidth(),
-                        image.getHeight(), false));
-                // Data for "images/island.jpg" is returns, use this as needed
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle any errors
-            }
-        });
-
         final String user_uid= getIntent().getStringExtra("user_uid");
         if(user_uid != null){
             if(!user_uid.equals(uid)) {
 
+                storageRef = storage.getReference();
+
+                islandRef = storageRef.child("images/"+ user_uid);
+
+                final long ONE_MEGABYTE = 4096 * 4096;
+                islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                    @Override
+                    public void onSuccess(byte[] bytes) {
+                        Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                        ImageView image = (ImageView) findViewById(R.id.profile_image);
+
+                        image.setImageBitmap(Bitmap.createScaledBitmap(bmp, image.getWidth(),
+                                image.getHeight(), false));
+                        // Data for "images/island.jpg" is returns, use this as needed
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // Handle any errors
+                    }
+                });
 
                 DocumentReference newuser = db.collection("users").document(user_uid);
                 newuser.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
