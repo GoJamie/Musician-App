@@ -202,7 +202,27 @@ public class ProfilePage extends AppCompatActivity {
                 upload_image.setVisibility(View.INVISIBLE);
             }
         }
+        storageRef = storage.getReference();
 
+        islandRef = storageRef.child("images/"+ uid);
+
+        final long ONE_MEGABYTE = 4096 * 4096;
+        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                ImageView image = (ImageView) findViewById(R.id.profile_image);
+
+                image.setImageBitmap(Bitmap.createScaledBitmap(bmp, image.getWidth(),
+                        image.getHeight(), false));
+                // Data for "images/island.jpg" is returns, use this as needed
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+            }
+        });
         DocumentReference docRef = db.collection("users").document(uid);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
