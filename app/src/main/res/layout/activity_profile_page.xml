@@ -55,7 +55,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:src="@drawable/image"
-            android:text="Muhammad Waqas"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="21sp"
@@ -90,7 +89,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="Wiliam@gmail.com"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -115,7 +113,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="+266 225 225"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -140,7 +137,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="Yliopistokatu, 14 301, Oulu"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -164,7 +160,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="Playing Music"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
         </LinearLayout>

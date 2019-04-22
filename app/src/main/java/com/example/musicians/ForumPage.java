@@ -76,7 +76,7 @@ public class ForumPage extends AppCompatActivity {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         User user = document.toObject(User.class);
-                        username = user.getFirstname() + " " + user.getLastname();
+                        username = user.getFirstname() + " " + user.getLastname() + ": ";
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
                         Log.d(TAG, "No such document");
@@ -127,10 +127,13 @@ public class ForumPage extends AppCompatActivity {
         SendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String message = EditMessage.getText().toString();
-                messagelist.add(new Message(username, message));
-                db.collection("events").document(event_uid).update("messageList", messagelist);
-                EditMessage.setText("");
+                if(EditMessage.getText().toString().length() > 0) {
+
+                    String message = EditMessage.getText().toString();
+                    messagelist.add(new Message(username, message));
+                    db.collection("events").document(event_uid).update("messageList", messagelist);
+                    EditMessage.setText("");
+                }
             }
         });
 
