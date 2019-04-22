@@ -130,8 +130,10 @@ public class ForumPage extends AppCompatActivity {
                 String message = EditMessage.getText().toString();
                 messagelist.add(new Message(username, message));
                 db.collection("events").document(event_uid).update("messageList", messagelist);
+                EditMessage.setText("");
             }
         });
+
 
 
     }

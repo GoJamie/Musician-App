@@ -67,7 +67,7 @@ public class UserList extends AppCompatActivity {
                         //
                         String current_uid = users.get(position).uid;
                         Intent i=new Intent(UserList.this,ProfilePage.class);
-                        i.putExtra("event_uid", current_uid); // there are many different types of data you can package
+                        i.putExtra("user_uid", current_uid); // there are many different types of data you can package
                         startActivity(i);
 
                     }
