@@ -131,13 +131,13 @@ public class EventPage extends AppCompatActivity {
                         }
                         participants = data.getParticipants();
 
-                        name.setText(data.getName());
+                        name.setText("Name: " + data.getName());
 
-                        description.setText(data.getDescription());
+                        description.setText("Description: "+data.getDescription());
 
-                        address.setText(data.getAddress());
+                        address.setText("Address: " + data.getAddress());
 
-                        city.setText(data.getCity());
+                        city.setText("City: " +data.getCity());
 
 
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
@@ -201,12 +201,14 @@ public class EventPage extends AppCompatActivity {
                                 DocumentSnapshot document = task.getResult();
                                 if (document.exists()) {
                                     joiner = document.toObject(User.class);
+                                    User a = new User();
                                     for(User user : participants) {
                                         if(joiner.uid.equals(user.uid)) {
-                                            participants.remove(user);
+                                            a = user;
                                             join.setText("Join");
                                         }
                                     }
+                                    participants.remove(a);
 
                                     db.collection("events").document(event_uid).update("participants", participants);
                                     Log.d(TAG, "DocumentSnapshot data: " + document.getData());
