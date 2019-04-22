@@ -141,6 +141,7 @@ public class CreateEvent extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(DocumentReference documentReference) {
                                         Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                        Helper.showCustomDialog("Event was created", CreateEvent.this, EventList.class);
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
