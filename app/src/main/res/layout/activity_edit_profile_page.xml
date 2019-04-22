@@ -25,6 +25,7 @@
             android:background="@drawable/shape_fancy_button"
             android:text="Your Profile"
             android:textAlignment="center"
+            android:gravity="center"
             android:textColor="#FFFCFAFA"
             android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
