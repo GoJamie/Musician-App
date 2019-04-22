@@ -78,6 +78,12 @@ public class ProfilePage extends AppCompatActivity {
         });
 
 
+        final String user_uid= getIntent().getStringExtra("user_uid");
+        if(user_uid != null){
+            if(user_uid == uid) {
+                edit.setVisibility(View.INVISIBLE);
+            }
+        }
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
