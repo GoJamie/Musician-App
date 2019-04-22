@@ -271,4 +271,13 @@ public class ProfilePage extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onDestroy() {
+
+        super.onDestroy();
+        upload_image.setBackgroundResource(0);
+
+
+    }
 }
