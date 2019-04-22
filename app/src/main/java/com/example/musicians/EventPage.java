@@ -115,10 +115,20 @@ public class EventPage extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
+
+                    final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     if (document.exists()) {
 
                         Event data = document.toObject(Event.class);
 
+                        for(User user : data.getParticipants()) {
+
+                            Boolean a = user.uid.equals(uid);
+                            if(a) {
+                                join.setText("Leave");
+                            }
+
+                        }
                         participants = data.getParticipants();
 
                         name.setText(data.getName());
@@ -153,28 +163,63 @@ public class EventPage extends AppCompatActivity {
         join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                CharSequence pls = join.getText();
                 final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                DocumentReference UserdocRef = db.collection("users").document(uid);
-                UserdocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                joiner = document.toObject(User.class);
-                                participants.add(joiner);
-                                db.collection("events").document(event_uid).update("participants", participants);
-                                Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                if(pls.equals("Join")) {
+
+                    DocumentReference UserdocRef = db.collection("users").document(uid);
+                    UserdocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot document = task.getResult();
+                                if (document.exists()) {
+                                    joiner = document.toObject(User.class);
+                                    participants.add(joiner);
+                                    db.collection("events").document(event_uid).update("participants", participants);
+                                    join.setText("Leave");
+                                    Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                                } else {
+                                    Log.d(TAG, "No such document");
+                                }
                             } else {
-                                Log.d(TAG, "No such document");
+                                Log.d(TAG, "get failed with ", task.getException());
                             }
-                        } else {
-                            Log.d(TAG, "get failed with ", task.getException());
                         }
-                    }
-                });
+                    });
+
+                }
+
+                if(pls.equals("Leave")) {
+
+                    DocumentReference UserdocRef = db.collection("users").document(uid);
+                    UserdocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot document = task.getResult();
+                                if (document.exists()) {
+                                    joiner = document.toObject(User.class);
+                                    for(User user : participants) {
+                                        if(joiner.uid.equals(user.uid)) {
+                                            participants.remove(user);
+                                            join.setText("Join");
+                                        }
+                                    }
+
+                                    db.collection("events").document(event_uid).update("participants", participants);
+                                    Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                                } else {
+                                    Log.d(TAG, "No such document");
+                                }
+                            } else {
+                                Log.d(TAG, "get failed with ", task.getException());
+                            }
+                        }
+                    });
+
+                }
 
 
 
