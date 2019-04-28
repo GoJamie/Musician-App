@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +31,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
-import java.io.InputStream;
+import java.util.Map;
+import java.util.UUID;
 
 public class ProfilePage extends AppCompatActivity {
     private Button saveButton;
@@ -63,18 +66,22 @@ public class ProfilePage extends AppCompatActivity {
                 && data != null && data.getData() != null )
         {
             filePath = data.getData();
-            try {
-                InputStream inputStream = this.getContentResolver().openInputStream(data.getData());
-                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-
+        }
+        final long ONE_MEGABYTE = 4096 * 4096;
+        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
                 ImageView image = (ImageView) findViewById(R.id.profile_image);
 
-                image.setImageBitmap(Bitmap.createScaledBitmap(bitmap, image.getWidth(),image.getHeight(), false));
+                image.setImageBitmap(Bitmap.createScaledBitmap(bmp, image.getWidth(),
+                        image.getHeight(), false));
             }
-            catch (IOException exception)
-            {}
-        }
-
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+            }
+        });
     }
 
     private void uploadImage() {
