@@ -26,8 +26,6 @@ import java.util.Map;
 // Tutorial used to create recycler view:
 // https://code.tutsplus.com/tutorials/getting-started-with-recyclerview-and-cardview-on-android--cms-23465
 
-// TODO: thath required api stuffs seems stupid. Can you remove them somehow?
-
 public class EventList extends AppCompatActivity {
 
     private RecyclerView event_recycler;

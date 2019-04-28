@@ -46,7 +46,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
     @Override
     public void onBindViewHolder(UserViewHolder UserViewHolder, int i) {
-        // TODO: Add correct user info
         UserViewHolder.UserName.setText(Users.get(i).getFirstname());
 
     }

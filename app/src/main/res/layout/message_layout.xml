@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--TODO: Remove hardcoded texts.    The message should be like this: android:gravity="right|center_vertical"-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
 
