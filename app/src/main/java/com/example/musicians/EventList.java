@@ -80,6 +80,47 @@ public class EventList extends AppCompatActivity {
 
     }
 
+/*    private void initializeData(){
+
+        String date = "2018/06/24";
+        List<Message> messagelist = new ArrayList<Message>();
+        messagelist.add(new Message("Sampo","Hi"));
+
+        Event example_event1 = new Event("Polar Bear Pitching", "test1", "Oulu", "Torikatu 1", date, 6, "Sampo123",messagelist);
+
+        db.collection("events")
+                .add(example_event1)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                    }
+                });
+
+        Event example_event2 = new Event("Polar Panda Pitching", "test2", "Helsinki", "Torikatu 1", date, 6, "Nechir123",messagelist);
+
+        db.collection("events")
+                .add(example_event2)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                    }
+                });
+     }*/
+
     private void initializeAdapter(){
         RecyclerView.Adapter event_adapter = new EventAdapter(events);
         event_recycler.setAdapter(event_adapter);
