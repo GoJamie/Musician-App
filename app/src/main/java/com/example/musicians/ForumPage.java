@@ -62,8 +62,6 @@ public class ForumPage extends AppCompatActivity {
         EditMessage = findViewById(R.id.edit_message);
 
         event_uid = getIntent().getStringExtra("event_uid");
-        // TODO need to figure out how to point to a particular event's message database.
-
 
         final String user_uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 

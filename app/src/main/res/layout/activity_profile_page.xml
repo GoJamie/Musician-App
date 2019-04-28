@@ -177,7 +177,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="50dp"
-            android:background="@color/orange"
+            android:background="@drawable/shape_fancy_button"
             android:text="UPLOAD PROFILE PICTURE"
             android:textColor="#FFFCFAFA"
             android:textSize="20dp" />
